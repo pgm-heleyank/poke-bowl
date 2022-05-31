@@ -1,0 +1,13 @@
+.footer_container {
+  background-color: var(--overlay-clr);
+  height: 20%;
+  margin-top: auto;
+  padding: 2rem;
+  position: relative;
+}
+
+.footer_title {
+  position: relative;
+  top: 0;
+  transform: translateY(-150%);
+}

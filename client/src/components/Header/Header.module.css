@@ -1,0 +1,22 @@
+.nav_container{
+  border-top: 6px solid var(--primary-clr);
+  border-bottom: 6px solid var(--primary-clr);
+  background-color: var(--white-clr);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  color: var(--secondary-clr);
+  font-family: var(--secondary-ff);
+  font-size: var(--xl) ;
+  text-align: center;
+  gap: 0.5rem;
+}
+
+.nav_item {
+  padding: 2rem 0;
+  width: 100%;
+}
+
+.nav_item[aria-current] {
+  background-color: var(--overlay-clr);
+}
