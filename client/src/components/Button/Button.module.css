@@ -5,3 +5,15 @@
   padding: 1rem 1.5rem;
   border-radius: 3rem; 
 }
+
+.button__secondary {
+  background-color: var(--accent-clr);
+}
+
+.button_small {
+  font-size: var(--lg);
+  padding: 0.7rem 1rem;
+  border-radius: 3rem; 
+  max-width: 12rem;
+  margin: 0 auto;
+}

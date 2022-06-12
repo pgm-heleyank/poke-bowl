@@ -1,7 +1,7 @@
 import React from "react";
 
-const TimeOut = () => {
+const TimeOutPage = () => {
   return <div>TimeOut</div>;
 };
 
-export default TimeOut;
+export default TimeOutPage;

@@ -1,0 +1,14 @@
+.ExtraInfo {
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  justify-content: center;
+  margin: auto 0;
+  padding: 2rem;
+}
+
+.ExtraInfo__label {
+  color: var(--accent-clr)
+}
+

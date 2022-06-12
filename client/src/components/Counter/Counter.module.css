@@ -1,0 +1,10 @@
+.counter {
+  display: flex;
+}
+
+.counter__number {
+  font-weight: var(--bold-fw);
+  width: 3rem;
+  text-align: center;
+  padding: 0.25rem;
+}

@@ -1,25 +1,29 @@
-import NotFound from "./NotFound";
-import Home from "./Home";
-import Bowls from "./Bowls";
-import MakeYourOwn from "./MakeYourOwn";
-import Sides from "./Sides";
-import Desserts from "./Desserts";
-import Drinks from "./Drinks";
-import CheckOut from "./CheckOut";
-import Payment from "./Payment";
-import Final from "./Final";
-import TimeOut from "./TimeOut";
+import NotFoundPage from "./NotFoundPage";
+import HomePage from "./HomePage";
+import BowlsPage from "./BowlsPage";
+import MakeYourOwnPage from "./MakeYourOwnPage";
+import SidesPage from "./SidesPage";
+import DessertsPage from "./DessertsPage";
+import DrinksPage from "./DrinksPage";
+import CheckOutPage from "./CheckOutPage";
+import PaymentPage from "./PaymentPage";
+import FinalPage from "./FinalPage";
+import TimeOutPage from "./TimeOutPage";
+import PayPage from "./PayPage";
+import SuccessPage from "./SuccessPage";
 
 export {
-  NotFound,
-  Home,
-  Sides,
-  Desserts,
-  Drinks,
-  CheckOut,
-  Final,
-  Bowls,
-  Payment,
-  MakeYourOwn,
-  TimeOut,
+  NotFoundPage,
+  HomePage,
+  SidesPage,
+  DessertsPage,
+  DrinksPage,
+  CheckOutPage,
+  FinalPage,
+  BowlsPage,
+  PaymentPage,
+  MakeYourOwnPage,
+  TimeOutPage,
+  PayPage,
+  SuccessPage,
 };

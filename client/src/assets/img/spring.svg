@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="233.854" height="126.906" viewBox="0 0 233.854 126.906">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0.06" stop-color="#6cb52d"/>
+      <stop offset="0.33" stop-color="#478e2b"/>
+      <stop offset="0.61" stop-color="#2a6f29"/>
+      <stop offset="0.84" stop-color="#175b28"/>
+      <stop offset="1" stop-color="#115528"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0.06" stop-color="#6cb52d"/>
+      <stop offset="0.28" stop-color="#68b12c"/>
+      <stop offset="0.46" stop-color="#5ea72c"/>
+      <stop offset="0.64" stop-color="#4e952b"/>
+      <stop offset="0.8" stop-color="#367c2a"/>
+      <stop offset="0.96" stop-color="#195d28"/>
+      <stop offset="1" stop-color="#115528"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_160" data-name="Group 160" transform="matrix(0.052, -0.999, 0.999, 0.052, -8500.076, -141.883)">
+    <g id="Laag_1-2" transform="translate(193.999 8577.983)">
+      <path id="Path_45" data-name="Path 45" d="M46.521,3.642a85.792,85.792,0,0,0-46.031,0V21.427a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(-0.49 -0.497)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46" data-name="Path 46" d="M46.524.5A58.612,58.612,0,0,1,22.989,5.2,58.765,58.765,0,0,1,.5.5V18.282a58.722,58.722,0,0,0,23.535,4.712,58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(-0.492 2.648)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-2" data-name="Laag_1-2" transform="matrix(-0.259, 0.966, -0.966, -0.259, 272.534, 8532.454)">
+      <path id="Path_45-2" data-name="Path 45" d="M46.031,3.145A85.792,85.792,0,0,0,0,3.145V20.93a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-2" data-name="Path 46" d="M46.024,0A58.612,58.612,0,0,1,22.489,4.7,58.765,58.765,0,0,1,0,0V17.785A58.722,58.722,0,0,0,23.535,22.5a58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(0.008 3.145)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-3" data-name="Laag_1-2" transform="matrix(0.407, 0.914, -0.914, 0.407, 201.025, 8501.853)">
+      <path id="Path_45-3" data-name="Path 45" d="M46.031,3.145A85.792,85.792,0,0,0,0,3.145V20.93a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-3" data-name="Path 46" d="M46.024,0A58.612,58.612,0,0,1,22.489,4.7,58.765,58.765,0,0,1,0,0V17.785A58.722,58.722,0,0,0,23.535,22.5a58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(0.008 3.145)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-4" data-name="Laag_1-2" transform="matrix(0.407, 0.914, -0.914, 0.407, 291.653, 8603.627)">
+      <path id="Path_45-4" data-name="Path 45" d="M46.031,3.145A85.792,85.792,0,0,0,0,3.145V20.93a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-4" data-name="Path 46" d="M46.024,0A58.612,58.612,0,0,1,22.489,4.7,58.765,58.765,0,0,1,0,0V17.785A58.722,58.722,0,0,0,23.535,22.5a58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(0.008 3.145)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-5" data-name="Laag_1-2" transform="translate(250.095 8630.282) rotate(101)">
+      <path id="Path_45-5" data-name="Path 45" d="M46.031,3.145A85.792,85.792,0,0,0,0,3.145V20.93a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-5" data-name="Path 46" d="M46.024,0A58.612,58.612,0,0,1,22.489,4.7,58.765,58.765,0,0,1,0,0V17.785A58.722,58.722,0,0,0,23.535,22.5a58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(0.008 3.145)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-6" data-name="Laag_1-2" transform="translate(288.148 8685.482) rotate(101)">
+      <path id="Path_45-6" data-name="Path 45" d="M46.031,3.145A85.792,85.792,0,0,0,0,3.145V20.93a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-6" data-name="Path 46" d="M46.024,0A58.612,58.612,0,0,1,22.489,4.7,58.765,58.765,0,0,1,0,0V17.785A58.722,58.722,0,0,0,23.535,22.5a58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(0.008 3.145)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+    <g id="Laag_1-2-7" data-name="Laag_1-2" transform="translate(198.673 8683.354)">
+      <path id="Path_45-7" data-name="Path 45" d="M46.521,3.642a85.792,85.792,0,0,0-46.031,0V21.427a58.8,58.8,0,0,0,23.543,4.712,58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(-0.49 -0.497)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+      <path id="Path_46-7" data-name="Path 46" d="M46.524.5A58.612,58.612,0,0,1,22.989,5.2,58.765,58.765,0,0,1,.5.5V18.282a58.722,58.722,0,0,0,23.535,4.712,58.765,58.765,0,0,0,22.489-4.7Z" transform="translate(-0.492 2.648)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+    </g>
+  </g>
+</svg>

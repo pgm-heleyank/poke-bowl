@@ -9,4 +9,6 @@ export const ROUTES = Object.freeze({
   PAYMENT: "payment",
   FINAL: "final",
   TIMEOUT: "time-out",
+  PAY: "pay",
+  SUCCESS: "success",
 });

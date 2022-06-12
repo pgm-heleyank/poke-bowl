@@ -1,7 +1,7 @@
 import React from "react";
 
-const Final = () => {
+const FinalPage = () => {
   return <div>Final</div>;
 };
 
-export default Final;
+export default FinalPage;

@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Century Gothic Pro';
-  src: url('./assets/fonts/CenturyGothicPro.woff2') format('woff2'),
+  src: url('./assets/fonts/CenturyGothicPro-Bold.woff2') format('woff2'),
       url('./assets/fonts/CenturyGothicPro-Bold.woff') format('woff');
   font-weight: 700;
 }
@@ -37,24 +37,44 @@
   --bold-fw: 700;
 
   /* sizes */
+  --sm: 1rem;
   --base: 1.3125rem;
+  --lg: 1.1875rem;
   --xl: 2rem;
-
+  --border-radius: 2rem;
 
 }
 
-body{
+body, 
+dt, 
+dd{
   font-family: var(--primary-ff);
   font-weight: var(--regular-fw);
   font-size:var(--base);
+  color: var(--primary-clr);
 }
 
-h2 {
+dt, 
+dd {
+  font-weight: var(--bold-fw);
+}
+
+h1,h2 {
   font-family: var(--secondary-ff);
   color: var(--secondary-clr);
   font-size: var(--xl);
 }
 
+.title {
+  padding: 3rem 2rem;
+}
+
+.link {
+  display:block;
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  padding: 1rem 0;
+}
 /* css for baseLayout */
 .primary-background {
   background: linear-gradient(196deg, rgba(251,123,84,1) 28%, rgba(255,209,98,1) 84%);
@@ -77,4 +97,73 @@ h2 {
 
 .home img {
   width: 75%;
+}
+
+/* main layout */
+
+.main-layout__main-container {
+  border: 2px solid red;
+  height: 100%;
+  padding: 2rem 2rem 12rem 2rem;
+  display: flex;
+}
+.main-layout__left-column{
+  border: 2px solid blue;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+.main-layout__right-column{
+  border: 2px solid green;
+  width: 20%;
+  flex-shrink: 0;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-layout__right-title {
+  font-size: var(--xl);
+  font-weight:var(--bold-fw);
+  padding-bottom: 5rem;
+}
+
+/*  bowl layout */
+.bowl__container {
+  width: 35rem;
+  padding: 10rem 2rem 2rem 2rem;
+  margin: 0 auto;
+  overflow-x: auto;
+  display: flex;
+  gap: 2rem;
+}
+.bowl__item {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2rem;
+}
+
+/* pay page */
+
+.pay-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  gap: 6rem;
+  font-size: var(--xl);
+  padding: 3rem;
+}
+
+.pay-page__title {
+  color: var(--accent-clr);
+}
+
+.pay-page__instruction {
+  font-weight: var(--bold-fw);
 }

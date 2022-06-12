@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="455.971" height="513.87" viewBox="0 0 455.971 513.87">
+  <defs>
+    <linearGradient id="linear-gradient" y1="0.5" x2="1" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0.02" stop-color="#7ab929"/>
+      <stop offset="0.08" stop-color="#9ebd1d"/>
+      <stop offset="0.14" stop-color="#c0c113"/>
+      <stop offset="0.21" stop-color="#dac40a"/>
+      <stop offset="0.28" stop-color="#edc604"/>
+      <stop offset="0.35" stop-color="#f9c701"/>
+      <stop offset="0.43" stop-color="#fdc800"/>
+      <stop offset="0.71" stop-color="#f18f34"/>
+      <stop offset="0.92" stop-color="#e95f32"/>
+      <stop offset="1" stop-color="#e3312d"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#eac700"/>
+      <stop offset="0.37" stop-color="#eac402"/>
+      <stop offset="0.65" stop-color="#edba0c"/>
+      <stop offset="0.89" stop-color="#f2aa1c"/>
+      <stop offset="1" stop-color="#f5a126"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_155" data-name="Group 155" transform="matrix(0.309, -0.951, 0.951, 0.309, -7806.074, 2827.907)">
+    <g id="Laag_1-2" transform="translate(4703.459 6680.362)">
+      <g id="Group_18" data-name="Group 18" transform="translate(0 0)">
+        <path id="Path_66" data-name="Path 66" d="M.6.6C11,84.746,39.92,126.925,55.491,145.36c78.786,93.375,238.087,80.412,381.708-56.293Z" transform="translate(-0.6 -0.6)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+        <path id="Path_67" data-name="Path 67" d="M5.52,1.74c9.816,79.5,37.135,119.326,51.85,136.752,74.415,88.209,224.9,75.973,360.582-53.193Z" transform="translate(3.44 0.937)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+    <g id="Laag_1-2-2" data-name="Laag_1-2" transform="translate(4720.064 6680.362) rotate(6)">
+      <g id="Group_18-2" data-name="Group 18" transform="translate(0)">
+        <path id="Path_66-2" data-name="Path 66" d="M0,0C12.4,84.252,42.393,127.2,58.444,146.057c81.214,95.518,240.717,87.38,381.6-44.667Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+        <path id="Path_67-2" data-name="Path 67" d="M0,0C11.7,79.6,40.037,120.151,55.206,137.977c76.709,90.232,227.386,82.556,360.481-42.21Z" transform="translate(9.051 2.94)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+    <g id="Laag_1-2-3" data-name="Laag_1-2" transform="matrix(0.951, 0.309, -0.309, 0.951, 4739.041, 6680.363)">
+      <g id="Group_18-3" data-name="Group 18" transform="translate(0)">
+        <path id="Path_66-3" data-name="Path 66" d="M0,0C16.239,83.227,48.742,126.962,65.961,146.327c87.125,98.077,249.975,98.946,388.547-22.608Z" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient)"/>
+        <path id="Path_67-3" data-name="Path 67" d="M0,0C15.333,78.627,46.035,119.927,62.307,138.232c82.292,92.649,236.132,93.48,367.041-21.372Z" transform="translate(9.385 3.382)" stroke="#1d1d1b" stroke-miterlimit="10" stroke-width="1" fill="url(#linear-gradient-2)"/>
+      </g>
+    </g>
+  </g>
+</svg>

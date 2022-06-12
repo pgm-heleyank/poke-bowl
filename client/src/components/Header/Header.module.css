@@ -5,6 +5,7 @@
   padding: 0 2rem;
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
   color: var(--secondary-clr);
   font-family: var(--secondary-ff);
   font-size: var(--xl) ;
@@ -15,8 +16,10 @@
 .nav_item {
   padding: 2rem 0;
   width: 100%;
+  transition: all 0.3 ease-in-out;
 }
 
 .nav_item[aria-current] {
   background-color: var(--overlay-clr);
+  height:100%
 }
