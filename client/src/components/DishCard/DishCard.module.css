@@ -30,3 +30,13 @@
   display: flex;
   gap: 1rem;
 }
+
+.dish_card__input {
+  border: 2px solid var(--primary-clr);
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+.dish_card__input:focus-within {
+  border: 2px solid var(--accent-clr);
+}

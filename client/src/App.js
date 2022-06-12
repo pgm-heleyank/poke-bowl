@@ -22,9 +22,11 @@ import { createContext, useEffect, useState } from "react";
 
 /* contexts*/
 export const DataContext = createContext();
+export const OrderContext = createContext();
 
 const App = () => {
   const [data, setData] = useState(null);
+  const [order, setOrder] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -146,30 +148,32 @@ const App = () => {
 
   return (
     <DataContext.Provider value={[data, setData]}>
-      <Routes>
-        <Route path={ROUTES.HOME} /*element={<BaseLayout />}*/>
-          <Route element={<BaseLayout />}>
-            <Route index element={<HomePage />} />
-            <Route element={<MainLayout />}>
-              <Route path={ROUTES.BOWLS} element={<BowlsPage />} />
-              <Route
-                path={ROUTES.MAKE_YOUR_OWN}
-                element={<MakeYourOwnPage />}
-              />
-              <Route path={ROUTES.SIDES} element={<SidesPage />} />
-              <Route path={ROUTES.DESSERTS} element={<DessertsPage />} />
-              <Route path={ROUTES.DRINKS} element={<DrinksPage />} />
+      <OrderContext.Provider value={[order, setOrder]}>
+        <Routes>
+          <Route path={ROUTES.HOME} /*element={<BaseLayout />}*/>
+            <Route element={<BaseLayout />}>
+              <Route index element={<HomePage />} />
+              <Route element={<MainLayout />}>
+                <Route path={ROUTES.BOWLS} element={<BowlsPage />} />
+                <Route
+                  path={ROUTES.MAKE_YOUR_OWN}
+                  element={<MakeYourOwnPage />}
+                />
+                <Route path={ROUTES.SIDES} element={<SidesPage />} />
+                <Route path={ROUTES.DESSERTS} element={<DessertsPage />} />
+                <Route path={ROUTES.DRINKS} element={<DrinksPage />} />
+              </Route>
             </Route>
+            <Route path={ROUTES.CHECK_OUT} element={<CheckOutPage />} />
+            <Route path={ROUTES.PAY} element={<PayPage />} />
+            <Route path={ROUTES.PAYMENT} element={<PaymentPage />} />
+            <Route path={ROUTES.SUCCESS} element={<SuccessPage />} />
+            <Route path={ROUTES.FINAL} element={<FinalPage />} />
+            <Route path={ROUTES.TIMEOUT} element={<TimeOutPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Route>
-          <Route path={ROUTES.CHECK_OUT} element={<CheckOutPage />} />
-          <Route path={ROUTES.PAY} element={<PayPage />} />
-          <Route path={ROUTES.PAYMENT} element={<PaymentPage />} />
-          <Route path={ROUTES.SUCCESS} element={<SuccessPage />} />
-          <Route path={ROUTES.FINAL} element={<FinalPage />} />
-          <Route path={ROUTES.TIMEOUT} element={<TimeOutPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
+        </Routes>
+      </OrderContext.Provider>
     </DataContext.Provider>
   );
 };

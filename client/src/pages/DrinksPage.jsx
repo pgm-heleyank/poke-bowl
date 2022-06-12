@@ -8,8 +8,7 @@ const DrinksPage = () => {
       <div className="main-layout__left-column">
         <Drinks />
         <Button size="small" secondary>
-          {" "}
-          add to cart
+          add to order
         </Button>
       </div>
       <div className="main-layout__right-column">

@@ -1,13 +1,12 @@
 import React, { useContext } from "react";
-import { DessertsContext } from "../../App";
-import Mochi from "../../assets/img/mochi.svg";
+import { DataContext } from "../../App";
 import styles from "./FlavorElement.module.css";
 
 const FlavorElement = () => {
-  const [desserts] = "";
+  const [{ desserts }] = useContext(DataContext);
   return (
     <ul className={styles.flavor_element__container}>
-      {desserts?.map((dessert) => (
+      {desserts.map((dessert) => (
         <li key={dessert.id} className={styles.flavor_element}>
           <img
             src={dessert.svg.url}

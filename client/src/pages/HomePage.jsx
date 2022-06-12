@@ -7,7 +7,9 @@ const HomePage = () => {
   return (
     <div className="home">
       <img src={logo} alt="logo poke bowl" />
-      <Button link={ROUTES.BOWLS}>Order here</Button>
+      <Button selected link={ROUTES.BOWLS}>
+        Order here
+      </Button>
     </div>
   );
 };

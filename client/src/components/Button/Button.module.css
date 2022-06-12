@@ -1,6 +1,7 @@
 .button {
-  background-color: var(--primary-clr);
-  color: var(--white-clr);
+  color: var(--primary-clr);
+  background-color: none;
+  border: 2px solid var(--primary-clr);
   font-size: var(--xl);
   padding: 1rem 1.5rem;
   border-radius: 3rem; 
@@ -8,6 +9,8 @@
 
 .button__secondary {
   background-color: var(--accent-clr);
+  color: var(--white-clr);
+  border: none;
 }
 
 .button_small {
@@ -16,4 +19,9 @@
   border-radius: 3rem; 
   max-width: 12rem;
   margin: 0 auto;
+}
+
+.selected {
+  background-color: var(--primary-clr);
+  color: var(--white-clr);
 }

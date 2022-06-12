@@ -8,7 +8,7 @@ const DessertElement = () => {
   return (
     <div className={styles.dessert_element}>
       <img src={Mochi_box} alt="" />
-      <Button link={ROUTES.DESSERTS} size="small">
+      <Button selected link={`/${ROUTES.DESSERTS}`} size="small">
         Yes, please!
       </Button>
     </div>

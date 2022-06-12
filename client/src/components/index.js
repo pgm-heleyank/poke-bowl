@@ -11,6 +11,9 @@ import DessertElement from "./DessertElement/DessertElement.jsx";
 import DishCard from "./DishCard/DishCard.jsx";
 import Dish from "./Dish/Dish.jsx";
 import Drinks from "./Drinks/Drinks.jsx";
+import Steps from "./Steps/Steps.jsx";
+import StepItem from "./StepItem/StepItem.jsx";
+import Drink from "./Drink/Drink.jsx";
 export {
   Button,
   Header,
@@ -25,4 +28,7 @@ export {
   DishCard,
   Dish,
   Drinks,
+  Steps,
+  StepItem,
+  Drink,
 };

@@ -1,7 +1,16 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styles from "./Button.module.css";
 
-const button = ({ children, size, link, secondary }) => {
+const button = ({
+  children,
+  size,
+  link,
+  secondary,
+  handleClick,
+  selected,
+  value,
+}) => {
   const handleSize = (size) => {
     let style = null;
     switch (size) {
@@ -19,19 +28,21 @@ const button = ({ children, size, link, secondary }) => {
     return style;
   };
   return link ? (
-    <a
-      href={link}
+    <Link
+      to={link}
       className={`${styles.button} ${size ? handleSize(size) : undefined} ${
-        secondary && styles.button__secondary
-      }`}
+        selected ? styles.selected : ""
+      }  ${secondary && styles.button__secondary}`}
     >
       {children}
-    </a>
+    </Link>
   ) : (
     <button
+      value={value}
+      onClick={(e) => handleClick && handleClick(e)}
       className={`${styles.button} ${size ? handleSize(size) : undefined} ${
-        secondary && styles.button__secondary
-      }`}
+        selected ? styles.selected : ""
+      } ${secondary && styles.button__secondary}`}
     >
       {children}
     </button>

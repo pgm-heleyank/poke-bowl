@@ -13,7 +13,7 @@ const BowlsPage = () => {
             <li key={bowl.id} className="bowl__item">
               <DishCard data={bowl} />
               <Button size="small" secondary>
-                add to cart
+                add to order
               </Button>
             </li>
           ))}

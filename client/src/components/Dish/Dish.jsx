@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./Dish.module.css";
 import cucumber from "../../assets/img/cucumber.svg";
 import mango from "../../assets/img/mango.svg";
@@ -9,7 +9,9 @@ import chicken from "../../assets/img/chicken.svg";
 import chilliMayo from "../../assets/img/chilli_mayo.svg";
 import spring from "../../assets/img/spring.svg";
 import bowl from "../../assets/img/bowl.svg";
-const Dish = () => {
+import { DataContext } from "../../App";
+const Dish = ({ bowlSize }) => {
+  const [{ plates }] = useContext(DataContext);
   return (
     <div className={styles.dish_container}>
       <ul className={styles.dish}>
@@ -58,7 +60,11 @@ const Dish = () => {
           </li>
         </div>
       </ul>
-      <img src={bowl} alt="" className={styles.dish__bowl} />
+      {bowlSize === "small" ? (
+        <img src={plates[0].svg.url} alt="" className={styles.dish__bowl} />
+      ) : (
+        <img src={plates[1].svg.url} alt="" className={styles.dish__bowl} />
+      )}
     </div>
   );
 };

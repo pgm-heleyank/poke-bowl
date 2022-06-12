@@ -1,10 +1,17 @@
 .counter {
   display: flex;
+  width: 6rem;
+  position: absolute;
+  z-index: 999;
+  transform: translateY(-50%);
+  gap: 0.2rem;
 }
 
 .counter__number {
   font-weight: var(--bold-fw);
-  width: 3rem;
+  width: 1.5rem;
   text-align: center;
   padding: 0.25rem;
+  background-color: var(--white-clr);
+  border-radius:var(--border-radius);
 }
