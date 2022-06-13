@@ -10,12 +10,7 @@ const BowlsPage = () => {
       <div className="main-layout__left-column">
         <ul className="bowl__container">
           {bowls?.map((bowl) => (
-            <li key={bowl.id} className="bowl__item">
-              <DishCard data={bowl} />
-              <Button size="small" secondary>
-                add to order
-              </Button>
-            </li>
+            <DishCard key={bowl.id} data={bowl} type="bowl" />
           ))}
         </ul>
       </div>

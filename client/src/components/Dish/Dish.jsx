@@ -11,7 +11,6 @@ import spring from "../../assets/img/spring.svg";
 import bowl from "../../assets/img/bowl.svg";
 import { DataContext } from "../../App";
 const Dish = ({ bowlSize }) => {
-  const [{ plates }] = useContext(DataContext);
   return (
     <div className={styles.dish_container}>
       <ul className={styles.dish}>
@@ -60,11 +59,8 @@ const Dish = ({ bowlSize }) => {
           </li>
         </div>
       </ul>
-      {bowlSize === "small" ? (
-        <img src={plates[0].svg.url} alt="" className={styles.dish__bowl} />
-      ) : (
-        <img src={plates[1].svg.url} alt="" className={styles.dish__bowl} />
-      )}
+
+      <img src={bowlSize.svg.url} alt="" className={styles.dish__bowl} />
     </div>
   );
 };

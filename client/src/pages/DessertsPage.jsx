@@ -8,18 +8,9 @@ const DessertsPage = () => {
     <>
       <div className="main-layout__left-column">
         <ul className="bowl__container">
-          <li key={plates[2].id} className="bowl__item">
-            <DishCard data={plates[2]} plate dessert />
-            <Button size="small" secondary>
-              add to cart
-            </Button>
-          </li>
-          <li key={plates[3].id} className="bowl__item">
-            <DishCard data={plates[3]} plate dessert />
-            <Button size="small" secondary>
-              add to order
-            </Button>
-          </li>
+          <DishCard key={plates[2].id} data={plates[2]} plate dessert />
+
+          <DishCard key={plates[3].id} data={plates[3]} plate dessert />
         </ul>
       </div>
       <div className="main-layout__right-column">

@@ -18,10 +18,11 @@
 
 .check_out_item__counter {
   width: 7rem;
+  position: relative;
 }
 
 .check_out_item__img {
-  width: 5rem;
+  width: 2.5rem;
   
 }
 

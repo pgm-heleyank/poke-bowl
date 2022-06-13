@@ -1,4 +1,6 @@
 import { Route, Routes } from "react-router-dom";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import { request } from "graphql-request";
 import "./App.css";
 import { ROUTES } from "./constants/routes";
@@ -132,6 +134,10 @@ const App = () => {
                 url
               }
             }
+            svg {
+              id
+              url
+            }
           }
         }
         
@@ -149,30 +155,32 @@ const App = () => {
   return (
     <DataContext.Provider value={[data, setData]}>
       <OrderContext.Provider value={[order, setOrder]}>
-        <Routes>
-          <Route path={ROUTES.HOME} /*element={<BaseLayout />}*/>
-            <Route element={<BaseLayout />}>
-              <Route index element={<HomePage />} />
-              <Route element={<MainLayout />}>
-                <Route path={ROUTES.BOWLS} element={<BowlsPage />} />
-                <Route
-                  path={ROUTES.MAKE_YOUR_OWN}
-                  element={<MakeYourOwnPage />}
-                />
-                <Route path={ROUTES.SIDES} element={<SidesPage />} />
-                <Route path={ROUTES.DESSERTS} element={<DessertsPage />} />
-                <Route path={ROUTES.DRINKS} element={<DrinksPage />} />
+        <DndProvider backend={HTML5Backend}>
+          <Routes>
+            <Route path={ROUTES.HOME} /*element={<BaseLayout />}*/>
+              <Route element={<BaseLayout />}>
+                <Route index element={<HomePage />} />
+                <Route element={<MainLayout />}>
+                  <Route path={ROUTES.BOWLS} element={<BowlsPage />} />
+                  <Route
+                    path={ROUTES.MAKE_YOUR_OWN}
+                    element={<MakeYourOwnPage />}
+                  />
+                  <Route path={ROUTES.SIDES} element={<SidesPage />} />
+                  <Route path={ROUTES.DESSERTS} element={<DessertsPage />} />
+                  <Route path={ROUTES.DRINKS} element={<DrinksPage />} />
+                </Route>
               </Route>
+              <Route path={ROUTES.CHECK_OUT} element={<CheckOutPage />} />
+              <Route path={ROUTES.PAY} element={<PayPage />} />
+              <Route path={ROUTES.PAYMENT} element={<PaymentPage />} />
+              <Route path={ROUTES.SUCCESS} element={<SuccessPage />} />
+              <Route path={ROUTES.FINAL} element={<FinalPage />} />
+              <Route path={ROUTES.TIMEOUT} element={<TimeOutPage />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Route>
-            <Route path={ROUTES.CHECK_OUT} element={<CheckOutPage />} />
-            <Route path={ROUTES.PAY} element={<PayPage />} />
-            <Route path={ROUTES.PAYMENT} element={<PaymentPage />} />
-            <Route path={ROUTES.SUCCESS} element={<SuccessPage />} />
-            <Route path={ROUTES.FINAL} element={<FinalPage />} />
-            <Route path={ROUTES.TIMEOUT} element={<TimeOutPage />} />
-            <Route path="*" element={<NotFoundPage />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </DndProvider>
       </OrderContext.Provider>
     </DataContext.Provider>
   );

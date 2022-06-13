@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { DataContext, OrderContext } from "../../App";
 import Counter from "../Counter/Counter";
 import styles from "./Drink.module.css";
@@ -7,9 +7,8 @@ const Drink = ({ drink }) => {
   const [{ drinks }] = useContext(DataContext);
   const [order, setOrder] = useContext(OrderContext);
   let [amount, setAmount] = useState(0);
+
   const handleClick = (e) => {
-    const oldVal = e.target.value || e.target.parentNode.value;
-    let oldValNumber = parseInt(oldVal, 10);
     const itemBuy = drinks.find((drink) => drink.id === e.target.dataset.id);
     const dubble = order?.find((i) => i.id === itemBuy.id);
     const up = order?.filter((i) => i.id !== itemBuy.id);
@@ -18,14 +17,18 @@ const Drink = ({ drink }) => {
       dub = [...dubble.items, itemBuy];
     }
     const newItems = !order
-      ? [{ id: itemBuy.id, items: [itemBuy] }]
+      ? [{ id: itemBuy.id, items: [itemBuy], type: "drinks" }]
       : !dubble
-      ? [...order, { id: itemBuy.id, items: [itemBuy] }]
-      : [...up, { id: itemBuy.id, items: [...dub] }];
+      ? [...order, { id: itemBuy.id, items: [itemBuy], type: "drinks" }]
+      : [...up, { id: itemBuy.id, items: [...dub], type: "drinks" }];
     setOrder(newItems);
-    setAmount(oldValNumber + 1);
   };
 
+  const specificItem = order?.find((order) => order.id === drink.id);
+  const newAmount = specificItem?.items.length;
+  useEffect(() => {
+    setAmount(newAmount);
+  }, [newAmount]);
   return (
     <li
       key={drink.id}
@@ -33,7 +36,7 @@ const Drink = ({ drink }) => {
       className={styles.drinks__wrapper}
       data-id={drink.id}
     >
-      {amount ? <Counter value={amount} setAmount={setAmount} /> : undefined}
+      {amount ? <Counter amount={amount} type="drinks" /> : undefined}
       <button
         onClick={(e) => handleClick(e)}
         data-id={drink.id}
@@ -47,7 +50,7 @@ const Drink = ({ drink }) => {
           className={styles.drinks__image}
         />
         <span data-id={drink.id} className={styles.drinks__price}>
-          €{drink.price}
+          €{drink.price.toFixed(2)}
         </span>
         <span data-id={drink.id} className={styles.drinks__name}>
           {drink.name}

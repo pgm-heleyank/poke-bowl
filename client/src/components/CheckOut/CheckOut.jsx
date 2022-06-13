@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ROUTES } from "../../constants/routes";
 import CheckOutItems from "../CheckOutItems/CheckOutItems";
 import ExtraInfo from "../ExtraInfo/ExtraInfo";
 import Button from "../Button/Button";
 import styles from "./CheckOut.module.css";
+import { Link } from "react-router-dom";
+import { OrderContext } from "../../App";
 const CheckOut = ({ ticket }) => {
+  const [order] = useContext(OrderContext);
+  const prices = [];
+  order?.map((ord) => ord.items.map((item) => prices.push(item.price)));
+  const totalPrice =
+    order &&
+    prices.reduce(
+      (previousValue, currentValue) => previousValue + currentValue
+    );
   return (
     <div className={`${styles.check_out} ${ticket && styles.ticket}`}>
       <h1 className="title">Your order</h1>
@@ -22,16 +32,16 @@ const CheckOut = ({ ticket }) => {
         </ExtraInfo>
       ) : (
         <ExtraInfo label="Did you forget anything">
-          <a className="link" href={ROUTES.BOWLS}>
+          <Link className="link" to={`/${ROUTES.BOWLS}`}>
             Yes?
-          </a>
+          </Link>
         </ExtraInfo>
       )}
 
       <div className={styles.check_out__footer}>
-        <p className={styles.check_out__price}>Price</p>
+        <p className={styles.check_out__price}>€{totalPrice.toFixed(2)}</p>
         {!ticket && (
-          <Button size="medium" link={ROUTES.PAY}>
+          <Button selected size="medium" link={`/${ROUTES.PAY}`}>
             Pay
           </Button>
         )}

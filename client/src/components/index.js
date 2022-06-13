@@ -14,6 +14,7 @@ import Drinks from "./Drinks/Drinks.jsx";
 import Steps from "./Steps/Steps.jsx";
 import StepItem from "./StepItem/StepItem.jsx";
 import Drink from "./Drink/Drink.jsx";
+import Flavor from "./Flavor/Flavor.jsx";
 export {
   Button,
   Header,
@@ -31,4 +32,5 @@ export {
   Steps,
   StepItem,
   Drink,
+  Flavor,
 };

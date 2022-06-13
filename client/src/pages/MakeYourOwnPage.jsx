@@ -6,12 +6,7 @@ const MakeYourOwnPage = () => {
     <>
       <div className="main-layout__left-column">
         <ul className="bowl__container">
-          <p className="bowl__item">
-            <DishCard make />
-            <Button size="small" secondary>
-              add to order
-            </Button>
-          </p>
+          <DishCard make />
         </ul>
       </div>
       <div className="main-layout__right-column">

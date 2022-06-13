@@ -4,14 +4,28 @@ import MinusSvg from "../../assets/img/minus.svg";
 import PlusSvg from "../../assets/img/plus.svg";
 import { DataContext, OrderContext } from "../../App";
 
-const Counter = ({ ticket, value, setAmount }) => {
+const Counter = ({ ticket, amount, type }) => {
   const [order, setOrder] = useContext(OrderContext);
-  const [{ drinks }] = useContext(DataContext);
+  const [{ drinks, bowls, sides }] = useContext(DataContext);
   const handleAdd = (e) => {
-    const itemBuy = drinks.find(
-      (drink) =>
-        drink.id === e.target.parentNode.parentNode.parentNode.dataset.id
-    );
+    let itemBuy = "";
+    if (type === "drinks") {
+      itemBuy = drinks.find(
+        (drink) =>
+          drink.id === e.target.parentNode.parentNode.parentNode.dataset.id
+      );
+    } else if (type === "bowl") {
+      itemBuy = bowls.find(
+        (bowl) =>
+          bowl.id === e.target.parentNode.parentNode.parentNode.dataset.id
+      );
+    } else if (type === "side") {
+      itemBuy = sides.find(
+        (side) =>
+          side.id === e.target.parentNode.parentNode.parentNode.dataset.id
+      );
+    }
+
     const dubble = order?.find((i) => i.id === itemBuy.id);
     const up = order?.filter((i) => i.id !== itemBuy.id);
     let dub = null;
@@ -19,12 +33,11 @@ const Counter = ({ ticket, value, setAmount }) => {
       dub = [...dubble.items, itemBuy];
     }
     const newItems = !order
-      ? [{ id: itemBuy.id, items: [itemBuy] }]
+      ? [{ id: itemBuy.id, items: [itemBuy], type: `${type}` }]
       : !dubble
-      ? [...order, { id: itemBuy.id, items: [itemBuy] }]
-      : [...up, { id: itemBuy.id, items: [...dub] }];
+      ? [...order, { id: itemBuy.id, items: [itemBuy], type: `${type}` }]
+      : [...up, { id: itemBuy.id, items: [...dub], type: `${type}` }];
     setOrder(newItems);
-    setAmount(value + 1);
   };
   const handleRemove = (e) => {
     const minus = order.find(
@@ -41,7 +54,6 @@ const Counter = ({ ticket, value, setAmount }) => {
       newItems = minus;
     }
     !newItems ? setOrder([...change]) : setOrder([...change, newItems]);
-    setAmount(value - 1);
   };
   return (
     <div className={styles.counter}>
@@ -50,7 +62,7 @@ const Counter = ({ ticket, value, setAmount }) => {
           <img src={MinusSvg} alt="remove one dish" />
         </button>
       )}
-      <p className={styles.counter__number}>{value}</p>
+      <p className={styles.counter__number}>{amount}</p>
       {!ticket && (
         <button onClick={(e) => handleAdd(e)}>
           <img src={PlusSvg} alt="add one dish" />

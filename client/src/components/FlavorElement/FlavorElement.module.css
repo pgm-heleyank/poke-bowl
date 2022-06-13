@@ -6,22 +6,3 @@
   gap: 3rem;
 }
 
-.flavor_element {
-  background-color: var(--overlay-clr);
-  width: 9rem;
-  aspect-ratio: 1.5/1;
-  border-radius: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-  padding: 0.5rem;
-  justify-content: flex-end;
-}
-
-.flavor_element__img {
-  transform:  translateY(-40%);
-  position: absolute;
-  top: 0;
-
-}

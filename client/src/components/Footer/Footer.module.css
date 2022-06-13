@@ -34,4 +34,5 @@
 .footer_price {
   color: var(--secondary-clr);
   font-weight: var(--bold-fw);
+  font-size: var(--xl);
 }

@@ -9,12 +9,7 @@ const SidesPage = () => {
       <div className="main-layout__left-column">
         <ul className="bowl__container">
           {sides.map((side) => (
-            <li key={side.id} className="bowl__item">
-              <DishCard data={side} />
-              <Button size="small" secondary>
-                add to order
-              </Button>
-            </li>
+            <DishCard key={side.id} data={side} type="side" />
           ))}
         </ul>
       </div>
