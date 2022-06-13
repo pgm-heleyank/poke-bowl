@@ -9,11 +9,9 @@
   position: relative;
   padding: 0.5rem;
   justify-content: flex-end;
-}
-
-.flavor_element__img {
-  transform:  translateY(-40%);
-  position: absolute;
-  top: 0;
-
+  &__img {
+    transform:  translateY(-40%);
+    position: absolute;
+    top: 0;
+  }
 }

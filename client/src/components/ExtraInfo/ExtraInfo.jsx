@@ -1,6 +1,6 @@
 import React from "react";
 import Logo from "../../assets/img/logoPoke.png";
-import styles from "./ExtraInfo.module.css";
+import styles from "./ExtraInfo.module.scss";
 
 const ExtraInfo = ({ label, children }) => {
   return (

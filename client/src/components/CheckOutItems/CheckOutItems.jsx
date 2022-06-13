@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { OrderContext } from "../../App";
 import Counter from "../Counter/Counter";
-import styles from "./CheckOutItems.module.css";
+import styles from "./CheckOutItems.module.scss";
 
 const CheckOutItems = ({ ticket }) => {
   const [order] = useContext(OrderContext);

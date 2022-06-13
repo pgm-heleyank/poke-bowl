@@ -1,7 +1,5 @@
 import React from "react";
-import { Button, CheckOut, ExtraInfo } from "../components";
-import CheckOutItems from "../components/CheckOutItems/CheckOutItems";
-import { ROUTES } from "../constants/routes";
+import { CheckOut } from "../components";
 
 const CheckOutPage = () => {
   return <CheckOut />;

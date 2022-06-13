@@ -1,0 +1,24 @@
+.check_out {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  &__footer {
+    display: flex;
+    align-items:center;
+    gap: 1.5rem;
+    justify-content:flex-end;
+    padding: 2rem;
+    margin-top: auto;
+  }
+  &__price {
+    color: var(--secondary-clr);
+    font-weight: var(--bold-fw);
+    font-size: var(--xl);
+  }
+}
+.check_out.ticket {
+  border: 2px solid black;
+  margin: 2rem;
+  height: 95vh;
+}
+

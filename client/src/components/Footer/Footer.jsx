@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.scss";
 import { Button } from "../index.js";
 import Order from "../Order/Order";
 import { ROUTES } from "../../constants/routes";
@@ -15,9 +15,9 @@ const Footer = () => {
       (previousValue, currentValue) => previousValue + currentValue
     );
   return order && order?.length !== 0 ? (
-    <div className={styles.footer_container}>
-      <h2 className={styles.footer_title}>Your order</h2>
-      <ul className={styles.footer_order__container}>
+    <div className={styles.footer}>
+      <h2 className={styles.footer__title}>Your order</h2>
+      <ul className={styles.footer__order_container}>
         {order.map((item) => {
           return (
             <li key={item.id}>
@@ -26,8 +26,8 @@ const Footer = () => {
           );
         })}
       </ul>
-      <div className={styles.footer_price_container}>
-        <p className={styles.footer_price}>€{totalPrice.toFixed(2)}</p>
+      <div className={styles.footer__price_container}>
+        <p className={styles.footer__price}>€{totalPrice.toFixed(2)}</p>
         <Button selected link={ROUTES.CHECK_OUT} size="small">
           check out
         </Button>

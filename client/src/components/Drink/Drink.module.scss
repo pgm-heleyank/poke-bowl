@@ -1,0 +1,32 @@
+.drink {
+  position: relative;
+  &__item {
+    background-color: var(--overlay-clr);
+    width: 10rem;
+    aspect-ratio: 1.5/1;
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0.5rem 1.5rem;
+    justify-content: flex-end;
+  }
+  &__image {
+    transform: rotate(9deg) translateY(-60%);
+    position: absolute;
+    top: 0.5rem;
+    right: 1.5rem;
+    max-height: none;
+    width: 3.5rem;
+    aspect-ratio: 1/2;
+  }
+  &__price {
+    color: var(--secondary-clr);
+    font-weight: var(--bold-fw);
+  }
+  &__name {
+    font-weight: var(--bold-fw);
+    font-size: var(--sm);
+    text-transform: capitalize;
+  }
+}

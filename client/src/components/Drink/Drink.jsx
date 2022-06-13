@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext, OrderContext } from "../../App";
 import Counter from "../Counter/Counter";
-import styles from "./Drink.module.css";
+import styles from "./Drink.module.scss";
 
 const Drink = ({ drink }) => {
   const [{ drinks }] = useContext(DataContext);
@@ -33,26 +33,26 @@ const Drink = ({ drink }) => {
     <li
       key={drink.id}
       value={amount}
-      className={styles.drinks__wrapper}
+      className={styles.drink}
       data-id={drink.id}
     >
       {amount ? <Counter amount={amount} type="drinks" /> : undefined}
       <button
         onClick={(e) => handleClick(e)}
         data-id={drink.id}
-        className={styles.drinks__item}
+        className={styles.drink__item}
         value={amount}
       >
         <img
           data-id={drink.id}
           src={drink.svg.url}
           alt={`a can of"${drink.name}`}
-          className={styles.drinks__image}
+          className={styles.drink__image}
         />
-        <span data-id={drink.id} className={styles.drinks__price}>
+        <span data-id={drink.id} className={styles.drink__price}>
           €{drink.price.toFixed(2)}
         </span>
-        <span data-id={drink.id} className={styles.drinks__name}>
+        <span data-id={drink.id} className={styles.drink__name}>
           {drink.name}
         </span>
       </button>

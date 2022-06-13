@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import styles from "./Button.module.css";
+import styles from "./Button.module.scss";
 
 const button = ({
   children,
@@ -15,10 +15,10 @@ const button = ({
     let style = null;
     switch (size) {
       case "medium":
-        style = styles.button_md;
+        style = styles.button__md;
         break;
       case "small":
-        style = styles.button_small;
+        style = styles.button__small;
         break;
 
       default:

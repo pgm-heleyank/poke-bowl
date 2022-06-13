@@ -4,16 +4,15 @@ import editSvg from "../../assets/img/edit.svg";
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import Dish from "../Dish/Dish";
-import styles from "./DishCard.module.css";
+import styles from "./DishCard.module.scss";
 
 const DishCard = ({ data, plate, dessert, make, type }) => {
   const [{ bowls, sides, plates }] = useContext(DataContext);
   const [bowlSize, setBowlSize] = useState(plates[0]);
   const [order, setOrder] = useContext(OrderContext);
   let [amount, setAmount] = useState(0);
-  const [orderItem, setOrderItem] = useState(null);
 
-  const specificItem = order?.find((order) => order.id === data.id);
+  const specificItem = order?.find((order) => order?.id === data.id);
   const newAmount = specificItem?.items.length;
   useEffect(() => {
     setAmount(newAmount);
@@ -51,13 +50,12 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       setBowlSize(plates[1]);
     }
   };
-  console.log(order);
   return (
     <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
       {amount ? <Counter amount={amount} type={type} /> : undefined}
       <div className={styles.dish_card}>
         <div className={styles.dish_card__header}>
-          <p className={styles.dish_card__price}>€{data?.price}</p>
+          <p className={styles.dish_card__price}>€{data?.price?.toFixed(2)}</p>
           {plate ? (
             <img src={data.svg.url} alt={data.name} />
           ) : (

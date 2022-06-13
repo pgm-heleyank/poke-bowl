@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./Order.module.css";
+import styles from "./Order.module.scss";
 import deleteSvg from "../../assets/img/delete.svg";
 import { OrderContext } from "../../App";
 
@@ -10,7 +10,7 @@ const Order = ({ item, amount }) => {
     setOrder(del);
   };
   return (
-    <div className={styles.order__container}>
+    <div className={styles.order}>
       <button
         className={styles.order__delete_btn}
         onClick={() => handleDelete()}
@@ -20,12 +20,12 @@ const Order = ({ item, amount }) => {
       <div className={styles.order__dish_container}>
         <img src={item.svg.url} alt={item.name} />
       </div>
-      <dl className={styles.order__dish_details}>
-        <dt className={styles.order__dish_name}>
-          <span className={styles.order__dish_amount}>{amount}x</span>{" "}
+      <dl className={styles.order_details}>
+        <dt className={styles.order_details__name}>
+          <span className={styles.order_details__amount}>{amount}x</span>{" "}
           {item.name}
         </dt>
-        <dd className={styles.order__dish_price}>
+        <dd className={styles.order_details__price}>
           €{(amount * item.price).toFixed(2)}
         </dd>
       </dl>

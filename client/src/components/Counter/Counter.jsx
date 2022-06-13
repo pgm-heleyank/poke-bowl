@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import styles from "./Counter.module.css";
+import styles from "./Counter.module.scss";
 import MinusSvg from "../../assets/img/minus.svg";
 import PlusSvg from "../../assets/img/plus.svg";
 import { DataContext, OrderContext } from "../../App";

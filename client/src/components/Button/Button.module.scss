@@ -5,20 +5,18 @@
   font-size: var(--xl);
   padding: 1rem 1.5rem;
   border-radius: 3rem; 
-}
-
-.button__secondary {
-  background-color: var(--accent-clr);
-  color: var(--white-clr);
-  border: none;
-}
-
-.button_small {
-  font-size: var(--lg);
-  padding: 0.7rem 1rem;
-  border-radius: 3rem; 
-  max-width: 12rem;
-  margin: 0 auto;
+  &__secondary {
+    background-color: var(--accent-clr);
+    color: var(--white-clr);
+    border: none;
+  }
+  &__small {
+    font-size: var(--lg);
+    padding: 0.7rem 1rem;
+    border-radius: 3rem; 
+    max-width: 12rem;
+    margin: 0 auto;
+  }
 }
 
 .selected {

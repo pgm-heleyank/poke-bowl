@@ -11,28 +11,27 @@
   align-items: center;
   font-weight: var(--bold-fw);
   gap: 1.5rem;
+  &__counter {
+    width: 7rem;
+    position: relative;
+  }
+  &__img {
+    width: 2.5rem;
+    
+  }
+  
+  &__name {
+    font-size: var(--xl)
+  }
+  
+  &__price {
+    width: 5rem;
+    color: var(--secondary-clr);
+    text-align: center;
+    margin-left: auto;
+  }
 }
 .check_out_item.ticket{
   background-color: rgba(0,0,0,0.05);
 }
 
-.check_out_item__counter {
-  width: 7rem;
-  position: relative;
-}
-
-.check_out_item__img {
-  width: 2.5rem;
-  
-}
-
-.check_out_item__name {
-  font-size: var(--xl)
-}
-
-.check_out_item__price {
-  width: 5rem;
-  color: var(--secondary-clr);
-  text-align: center;
-  margin-left: auto;
-}

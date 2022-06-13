@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { DataContext } from "../../App";
 import Flavor from "../Flavor/Flavor";
-import styles from "./FlavorElement.module.css";
+import styles from "./FlavorElement.module.scss";
 
 const FlavorElement = () => {
   const [{ desserts }] = useContext(DataContext);

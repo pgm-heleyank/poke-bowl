@@ -6,9 +6,9 @@
   justify-content: center;
   margin: auto 0;
   padding: 2rem;
+  &__label {
+    color: var(--accent-clr)
+  }
 }
 
-.ExtraInfo__label {
-  color: var(--accent-clr)
-}
 

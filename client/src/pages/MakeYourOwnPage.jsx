@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, DishCard, Steps } from "../components";
+import { DishCard, Steps } from "../components";
 
 const MakeYourOwnPage = () => {
   return (

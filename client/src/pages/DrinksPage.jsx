@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, DessertElement, Drinks } from "../components";
-import { request } from "graphql-request";
 
 const DrinksPage = () => {
   return (

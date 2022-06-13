@@ -75,6 +75,7 @@ h1,h2 {
   text-underline-offset: 0.25rem;
   padding: 1rem 0;
 }
+
 /* css for baseLayout */
 .primary-background {
   background: linear-gradient(196deg, rgba(251,123,84,1) 28%, rgba(255,209,98,1) 84%);
@@ -159,12 +160,25 @@ h1,h2 {
   gap: 6rem;
   font-size: var(--xl);
   padding: 3rem;
+  &__title {
+    color: var(--accent-clr);
+  }
+  &__instruction {
+    font-weight: var(--bold-fw);
+  }
 }
 
-.pay-page__title {
-  color: var(--accent-clr);
+
+/* final page */
+
+.final-page { 
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
-.pay-page__instruction {
-  font-weight: var(--bold-fw);
+.primary-background__animation { 
+  width: 50rem;
+  aspect-ratio:1/1;
 }

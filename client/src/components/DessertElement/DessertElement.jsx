@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "../Button/Button";
 import Mochi_box from "../../assets/img/mochi_box.png";
-import styles from "./DessertElement.module.css";
+import styles from "./DessertElement.module.scss";
 import { ROUTES } from "../../constants/routes";
 
 const DessertElement = () => {

@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import styles from "./Dish.module.css";
+import React from "react";
+import styles from "./Dish.module.scss";
 import cucumber from "../../assets/img/cucumber.svg";
 import mango from "../../assets/img/mango.svg";
 import nachos from "../../assets/img/nachos.svg";
@@ -8,8 +8,6 @@ import tomatoes from "../../assets/img/tomatoes.svg";
 import chicken from "../../assets/img/chicken.svg";
 import chilliMayo from "../../assets/img/chilli_mayo.svg";
 import spring from "../../assets/img/spring.svg";
-import bowl from "../../assets/img/bowl.svg";
-import { DataContext } from "../../App";
 const Dish = ({ bowlSize }) => {
   return (
     <div className={styles.dish_container}>

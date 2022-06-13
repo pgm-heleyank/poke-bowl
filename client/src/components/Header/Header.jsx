@@ -1,24 +1,24 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ROUTES } from "../../constants/routes";
-import styles from "./Header.module.css";
+import styles from "./Header.module.scss";
 
 const Header = () => {
   return (
-    <nav className={styles.nav_container}>
-      <NavLink className={styles.nav_item} to={ROUTES.BOWLS}>
+    <nav className={styles.nav}>
+      <NavLink className={styles.nav__item} to={ROUTES.BOWLS}>
         Bowls
       </NavLink>
-      <NavLink className={styles.nav_item} to={ROUTES.MAKE_YOUR_OWN}>
+      <NavLink className={styles.nav__item} to={ROUTES.MAKE_YOUR_OWN}>
         Make your own
       </NavLink>
-      <NavLink className={styles.nav_item} to={ROUTES.SIDES}>
+      <NavLink className={styles.nav__item} to={ROUTES.SIDES}>
         Sides
       </NavLink>
-      <NavLink className={styles.nav_item} to={ROUTES.DESSERTS}>
+      <NavLink className={styles.nav__item} to={ROUTES.DESSERTS}>
         Desserts
       </NavLink>
-      <NavLink className={styles.nav_item} to={ROUTES.DRINKS}>
+      <NavLink className={styles.nav__item} to={ROUTES.DRINKS}>
         Drinks
       </NavLink>
     </nav>

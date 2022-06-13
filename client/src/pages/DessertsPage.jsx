@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { DataContext } from "../App";
-import { Button, DishCard, FlavorElement } from "../components";
+import { DishCard, FlavorElement } from "../components";
 
 const DessertsPage = () => {
   const [{ plates }] = useContext(DataContext);

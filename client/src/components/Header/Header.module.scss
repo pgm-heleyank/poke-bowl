@@ -1,4 +1,4 @@
-.nav_container{
+.nav{
   border-top: 6px solid var(--primary-clr);
   border-bottom: 6px solid var(--primary-clr);
   background-color: var(--white-clr);
@@ -11,15 +11,13 @@
   font-size: var(--xl) ;
   text-align: center;
   gap: 0.5rem;
-}
-
-.nav_item {
-  padding: 2rem 0;
-  width: 100%;
-  transition: all 0.3 ease-in-out;
-}
-
-.nav_item[aria-current] {
-  background-color: var(--overlay-clr);
-  height:100%
+  &__item {
+    padding: 2rem 0;
+    width: 100%;
+    transition: all 0.3 ease-in-out;
+  }
+  &__item[aria-current] {
+    background-color: var(--overlay-clr);
+    height:100%
+  }
 }

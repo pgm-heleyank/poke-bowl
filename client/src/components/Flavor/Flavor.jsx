@@ -1,6 +1,6 @@
 import React from "react";
 import { useDrag } from "react-dnd";
-import styles from "./Flavor.module.css";
+import styles from "./Flavor.module.scss";
 
 const Flavor = ({ dessert }) => {
   const [, drag] = useDrag(() => ({

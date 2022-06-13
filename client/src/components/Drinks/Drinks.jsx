@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DataContext, OrderContext } from "../../App";
+import { DataContext } from "../../App";
 import Drink from "../Drink/Drink";
-import styles from "./Drinks.module.css";
+import styles from "./Drinks.module.scss";
 
 const Drinks = ({ highlighted }) => {
   const [{ drinks }] = useContext(DataContext);

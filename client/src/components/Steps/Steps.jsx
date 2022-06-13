@@ -1,8 +1,7 @@
 import React, { useContext, useState } from "react";
 import { DataContext } from "../../App";
-import Rice from "../../assets/img/rice.svg";
 import StepItem from "../StepItem/StepItem";
-import styles from "./Steps.module.css";
+import styles from "./Steps.module.scss";
 
 const Steps = () => {
   const [{ ingredients }] = useContext(DataContext);

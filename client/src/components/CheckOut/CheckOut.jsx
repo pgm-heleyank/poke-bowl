@@ -3,7 +3,7 @@ import { ROUTES } from "../../constants/routes";
 import CheckOutItems from "../CheckOutItems/CheckOutItems";
 import ExtraInfo from "../ExtraInfo/ExtraInfo";
 import Button from "../Button/Button";
-import styles from "./CheckOut.module.css";
+import styles from "./CheckOut.module.scss";
 import { Link } from "react-router-dom";
 import { OrderContext } from "../../App";
 const CheckOut = ({ ticket }) => {
@@ -24,8 +24,8 @@ const CheckOut = ({ ticket }) => {
           <address>
             <div>
               <span>Vlaanderenstraat 116</span>
-              <span>9000 Gent</span>
-              <span>Belgie</span>
+              <span> 9000 Gent</span>
+              <span> Belgie</span>
             </div>
             <div>vlaanderenstraat@hawaiian.be</div>
           </address>
