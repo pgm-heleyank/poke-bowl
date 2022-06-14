@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { DishCard, Steps } from "../components";
 
 const MakeYourOwnPage = () => {
+  const [customOrder, setCustomOrder] = useState([]);
+  console.log("test", customOrder);
   return (
     <>
       <div className="main-layout__left-column">
@@ -10,7 +12,7 @@ const MakeYourOwnPage = () => {
         </ul>
       </div>
       <div className="main-layout__right-column">
-        <Steps />
+        <Steps customOrder={customOrder} setCustomOrder={setCustomOrder} />
       </div>
     </>
   );

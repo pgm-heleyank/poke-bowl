@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useState } from "react";
 import { DataContext } from "../../App";
 import styles from "./StepItem.module.scss";
 
@@ -10,15 +9,24 @@ const StepItem = ({ items, customOrder, setCustomOrder }) => {
     const itemId =
       e.target.parentNode.dataset.id ||
       e.target.parentNode.parentNode.dataset.id;
-    let item = ingredients.filter((ingredient) => ingredient.id === itemId);
-    const newItem = [{ label: item[0].label, items: [...item] }];
+    const item = ingredients.filter((ingredient) => ingredient.id === itemId);
+    let newItem = [{ label: item[0].label, items: [...item] }];
     const labelFilter = customOrder?.filter((o) => o.label === item[0].label);
-    console.log(1, labelFilter);
+    const filteredArr = customOrder?.filter((o) => o.label !== item[0].label);
+    if (labelFilter.length > 0) {
+      newItem = [
+        {
+          label: labelFilter[0].label,
+          items: [...labelFilter[0].items, ...item],
+        },
+      ];
+      setCustomOrder([...filteredArr, ...newItem]);
+    }
+
     if (labelFilter.length === 0) {
       setCustomOrder([...customOrder, ...newItem]);
     }
   };
-  console.log(customOrder);
   return items.map((item) => {
     return (
       <li key={item.id} data-id={item.id}>

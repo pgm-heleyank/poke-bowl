@@ -62,6 +62,7 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       setBowlSize(plates[1]);
     }
   };
+
   return (
     <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
       {amount ? <Counter amount={amount} type={type} /> : undefined}

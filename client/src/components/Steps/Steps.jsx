@@ -3,8 +3,7 @@ import { DataContext } from "../../App";
 import StepItem from "../StepItem/StepItem";
 import styles from "./Steps.module.scss";
 
-const Steps = () => {
-  const [customOrder, setCustomOrder] = useState([]);
+const Steps = ({ customOrder, setCustomOrder }) => {
   const [{ ingredients }] = useContext(DataContext);
   const base = ingredients.filter((ingredient) => ingredient.label === "base");
   const protein = ingredients.filter(
@@ -24,6 +23,7 @@ const Steps = () => {
   const handleClick = (s) => {
     return setStep(s);
   };
+
   return (
     <div className={styles.steps}>
       <div className={`${styles.step} ${step === 1 ? styles.open : undefined}`}>
