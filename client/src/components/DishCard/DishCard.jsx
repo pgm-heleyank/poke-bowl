@@ -17,7 +17,6 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
   useEffect(() => {
     setAmount(newAmount);
   }, [newAmount]);
-
   const handleClick = (e) => {
     let itemBuy = "";
     if (type === "bowl") {
@@ -28,6 +27,8 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       itemBuy = sides.find(
         (side) => side.id === e.target.parentNode.dataset.id
       );
+    } else if (make) {
+      itemBuy = data;
     }
 
     const changedId = {
@@ -69,26 +70,16 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       <div className={styles.dish_card}>
         <div className={styles.dish_card__header}>
           <p className={styles.dish_card__price}>
-            €
-            {data.length !== 0
-              ? (data?.price + bowlSize.price).toFixed(2)
-              : (0 + bowlSize.price).toFixed(2)}
+            €{(data?.price + bowlSize.price).toFixed(2)}
           </p>
-          {plate ? (
+          {!make ? (
             <img src={data.svg.url} alt={data.name} />
           ) : (
             <Dish bowlSize={bowlSize} />
           )}
-          <button>
-            <img src={editSvg} alt="edit dish" />
-          </button>
         </div>
         {make ? (
-          <input
-            placeholder="name"
-            className={styles.dish_card__input}
-            type="text"
-          />
+          <h3 className={styles.dish_card__title}>Your custom bowl</h3>
         ) : (
           <>
             <h3 className={styles.dish_card__title}>

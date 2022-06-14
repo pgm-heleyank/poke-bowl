@@ -2,9 +2,15 @@ import React, { useContext } from "react";
 import { DataContext } from "../../App";
 import styles from "./StepItem.module.scss";
 
-const StepItem = ({ items, customOrder, setCustomOrder }) => {
+const StepItem = ({
+  items,
+  customOrder,
+  setCustomOrder,
+  price,
+  extraPrice,
+  setExtraPrice,
+}) => {
   const [{ ingredients }] = useContext(DataContext);
-
   const addItem = (e) => {
     const itemId =
       e.target.parentNode.dataset.id ||
@@ -26,12 +32,19 @@ const StepItem = ({ items, customOrder, setCustomOrder }) => {
     if (labelFilter.length === 0) {
       setCustomOrder([...customOrder, ...newItem]);
     }
+
+    if (price) {
+      setExtraPrice(extraPrice + item[0].price);
+    }
   };
   return items.map((item) => {
     return (
       <li key={item.id} data-id={item.id}>
         <button onClick={(e) => addItem(e)} className={styles.step}>
-          <p className={styles.step__item_price}>+€{item.price.toFixed(1)}</p>
+          {price && (
+            <p className={styles.step__item_price}>€{item.price.toFixed(2)}</p>
+          )}
+
           <img
             src={item.svg.url}
             alt="rice"

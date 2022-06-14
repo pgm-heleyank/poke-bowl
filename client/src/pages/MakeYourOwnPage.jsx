@@ -1,18 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { DishCard, Steps } from "../components";
+import uuid from "react-uuid";
 
 const MakeYourOwnPage = () => {
   const [customOrder, setCustomOrder] = useState([]);
-  console.log("test", customOrder);
+  const [customData, setCustomData] = useState([]);
+  const [extraPrice, setExtraPrice] = useState(0);
+
+  useEffect(() => {
+    setCustomData({
+      id: uuid(),
+      name: "Your custom bowl",
+      price: 9.9 + extraPrice,
+      svg: {
+        id: "cl3sefpfsdgen0bmiuc80k9fy",
+        url: "https://media.graphassets.com/FsgBVq4TZGKvzeHE4Vg0",
+      },
+      ingredients: [...customOrder],
+    });
+  }, [extraPrice, customOrder]);
   return (
     <>
       <div className="main-layout__left-column">
         <ul className="bowl__container">
-          <DishCard make data={[]} />
+          <DishCard make data={customData} />
         </ul>
       </div>
       <div className="main-layout__right-column">
-        <Steps customOrder={customOrder} setCustomOrder={setCustomOrder} />
+        <Steps
+          customOrder={customOrder}
+          setCustomOrder={setCustomOrder}
+          extraPrice={extraPrice}
+          setExtraPrice={setExtraPrice}
+        />
       </div>
     </>
   );

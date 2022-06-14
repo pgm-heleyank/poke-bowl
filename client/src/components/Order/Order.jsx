@@ -9,7 +9,6 @@ const Order = ({ item, amount }) => {
     const del = order.filter((order) => order.id !== item.id);
     setOrder(del);
   };
-  console.log(item);
   return (
     <div className={styles.order}>
       <button
