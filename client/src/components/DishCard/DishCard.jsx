@@ -37,14 +37,12 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
     };
 
     const addBowlSize = { ...changedId, bowlSize: bowlSize };
-    console.log(3, addBowlSize);
+
     const dubble = order?.find((i) => i.id === addBowlSize.id);
-    console.log(dubble);
     const up = order?.filter((i) => i.id !== addBowlSize.id);
     let dub = null;
     if (dubble) {
       dub = [...dubble.items, addBowlSize];
-      console.log(dub);
     }
     const newItems = !order
       ? [{ id: addBowlSize.id, items: [addBowlSize], type: `${type}` }]
@@ -64,7 +62,6 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       setBowlSize(plates[1]);
     }
   };
-  console.log(data);
   return (
     <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
       {amount ? <Counter amount={amount} type={type} /> : undefined}
@@ -74,7 +71,7 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
             €
             {data.length !== 0
               ? (data?.price + bowlSize.price).toFixed(2)
-              : "0"}
+              : (0 + bowlSize.price).toFixed(2)}
           </p>
           {plate ? (
             <img src={data.svg.url} alt={data.name} />

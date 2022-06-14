@@ -4,6 +4,7 @@ import StepItem from "../StepItem/StepItem";
 import styles from "./Steps.module.scss";
 
 const Steps = () => {
+  const [customOrder, setCustomOrder] = useState([]);
   const [{ ingredients }] = useContext(DataContext);
   const base = ingredients.filter((ingredient) => ingredient.label === "base");
   const protein = ingredients.filter(
@@ -30,10 +31,14 @@ const Steps = () => {
           <button onClick={() => handleClick(1)}>Stap 1</button>
         </h3>
         <div className={styles.step__info}>
-          <p className={styles.step__description}>choose your base</p>
+          <p className={styles.step__description}>Your base</p>
           <p className={styles.step__items_to_choose}>0/1</p>
           <ul className={styles.step__items}>
-            <StepItem items={base} />
+            <StepItem
+              items={base}
+              customOrder={customOrder}
+              setCustomOrder={setCustomOrder}
+            />
           </ul>
         </div>
       </div>
@@ -42,10 +47,14 @@ const Steps = () => {
           <button onClick={() => handleClick(2)}>Stap 2</button>
         </h3>
         <div className={styles.step__info}>
-          <p className={styles.step__description}>choose your mix-ins</p>
+          <p className={styles.step__description}>Your mix-ins</p>
           <p className={styles.step__items_to_choose}>0/5</p>
           <ul className={styles.step__items}>
-            <StepItem items={mixin} />
+            <StepItem
+              items={mixin}
+              customOrder={customOrder}
+              setCustomOrder={setCustomOrder}
+            />
           </ul>
         </div>
       </div>
@@ -54,10 +63,14 @@ const Steps = () => {
           <button onClick={() => handleClick(3)}>Stap 3</button>
         </h3>
         <div className={styles.step__info}>
-          <p className={styles.step__description}>choose your protein</p>
+          <p className={styles.step__description}>Your protein</p>
           <p className={styles.step__items_to_choose}>0/1</p>
           <ul className={styles.step__items}>
-            <StepItem items={protein} />
+            <StepItem
+              items={protein}
+              customOrder={customOrder}
+              setCustomOrder={setCustomOrder}
+            />
           </ul>
         </div>
       </div>
@@ -66,10 +79,14 @@ const Steps = () => {
           <button onClick={() => handleClick(4)}>Stap 4</button>
         </h3>
         <div className={styles.step__info}>
-          <p className={styles.step__description}>choose your dressing</p>
+          <p className={styles.step__description}>Your dressing</p>
           <p className={styles.step__items_to_choose}>0/1</p>
           <ul className={styles.step__items}>
-            <StepItem items={dressing} />
+            <StepItem
+              items={dressing}
+              customOrder={customOrder}
+              setCustomOrder={setCustomOrder}
+            />
           </ul>
         </div>
       </div>
@@ -78,10 +95,14 @@ const Steps = () => {
           <button onClick={() => handleClick(5)}>Stap 5</button>
         </h3>
         <div className={styles.step__info}>
-          <p className={styles.step__description}>choose your topping</p>
+          <p className={styles.step__description}>Your topping</p>
           <p className={styles.step__items_to_choose}>0/3</p>
           <ul className={styles.step__items}>
-            <StepItem items={topping} />
+            <StepItem
+              items={topping}
+              customOrder={customOrder}
+              setCustomOrder={setCustomOrder}
+            />
           </ul>
         </div>
       </div>
