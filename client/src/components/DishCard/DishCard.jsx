@@ -29,17 +29,31 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
         (side) => side.id === e.target.parentNode.dataset.id
       );
     }
-    const dubble = order?.find((i) => i.id === itemBuy.id);
-    const up = order?.filter((i) => i.id !== itemBuy.id);
+
+    const changedId = {
+      ...itemBuy,
+      id: itemBuy.id + bowlSize.id,
+      price: itemBuy.price + bowlSize.price,
+    };
+
+    const addBowlSize = { ...changedId, bowlSize: bowlSize };
+    console.log(3, addBowlSize);
+    const dubble = order?.find((i) => i.id === addBowlSize.id);
+    console.log(dubble);
+    const up = order?.filter((i) => i.id !== addBowlSize.id);
     let dub = null;
     if (dubble) {
-      dub = [...dubble.items, itemBuy];
+      dub = [...dubble.items, addBowlSize];
+      console.log(dub);
     }
     const newItems = !order
-      ? [{ id: itemBuy.id, items: [itemBuy], type: `${type}` }]
+      ? [{ id: addBowlSize.id, items: [addBowlSize], type: `${type}` }]
       : !dubble
-      ? [...order, { id: itemBuy.id, items: [itemBuy], type: `${type}` }]
-      : [...up, { id: itemBuy.id, items: [...dub], type: `${type}` }];
+      ? [
+          ...order,
+          { id: addBowlSize.id, items: [addBowlSize], type: `${type}` },
+        ]
+      : [...up, { id: addBowlSize.id, items: [...dub], type: `${type}` }];
     setOrder(newItems);
   };
 
@@ -50,12 +64,18 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
       setBowlSize(plates[1]);
     }
   };
+  console.log(data);
   return (
     <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
       {amount ? <Counter amount={amount} type={type} /> : undefined}
       <div className={styles.dish_card}>
         <div className={styles.dish_card__header}>
-          <p className={styles.dish_card__price}>€{data?.price?.toFixed(2)}</p>
+          <p className={styles.dish_card__price}>
+            €
+            {data.length !== 0
+              ? (data?.price + bowlSize.price).toFixed(2)
+              : "0"}
+          </p>
           {plate ? (
             <img src={data.svg.url} alt={data.name} />
           ) : (

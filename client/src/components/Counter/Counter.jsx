@@ -4,25 +4,16 @@ import MinusSvg from "../../assets/img/minus.svg";
 import PlusSvg from "../../assets/img/plus.svg";
 import { DataContext, OrderContext } from "../../App";
 
-const Counter = ({ ticket, amount, type }) => {
+const Counter = ({ ticket, amount, type, noAdd }) => {
+  console.log(type);
   const [order, setOrder] = useContext(OrderContext);
-  const [{ drinks, bowls, sides }] = useContext(DataContext);
+  const [{ drinks }] = useContext(DataContext);
   const handleAdd = (e) => {
     let itemBuy = "";
     if (type === "drinks") {
       itemBuy = drinks.find(
         (drink) =>
           drink.id === e.target.parentNode.parentNode.parentNode.dataset.id
-      );
-    } else if (type === "bowl") {
-      itemBuy = bowls.find(
-        (bowl) =>
-          bowl.id === e.target.parentNode.parentNode.parentNode.dataset.id
-      );
-    } else if (type === "side") {
-      itemBuy = sides.find(
-        (side) =>
-          side.id === e.target.parentNode.parentNode.parentNode.dataset.id
       );
     }
 
@@ -63,7 +54,7 @@ const Counter = ({ ticket, amount, type }) => {
         </button>
       )}
       <p className={styles.counter__number}>{amount}</p>
-      {!ticket && (
+      {!ticket && type === "drinks" && (
         <button onClick={(e) => handleAdd(e)}>
           <img src={PlusSvg} alt="add one dish" />
         </button>

@@ -6,7 +6,7 @@ const MakeYourOwnPage = () => {
     <>
       <div className="main-layout__left-column">
         <ul className="bowl__container">
-          <DishCard make />
+          <DishCard make data={[]} />
         </ul>
       </div>
       <div className="main-layout__right-column">

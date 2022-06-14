@@ -1,7 +1,7 @@
 .order {
   background-color: var(--accent-clr);
-  width: 7rem;
-  height: 11rem;
+  width: 7.5rem;
+  height: 12.5rem;
   border-radius: var(--border-radius);
   display: flex;
   flex-direction: column;
@@ -45,5 +45,8 @@
   }
   &__price {
     font-size: var(--xl);
+  }
+  &__bowl_size {
+    font-size: var(--xs);
   }
 }

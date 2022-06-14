@@ -23,7 +23,7 @@
     /* color css variables */
   --linear-gradient: linear-gradient(196deg, rgba(251,123,84,1) 28%, rgba(255,209,98,1) 84%);
   --primary-clr: rgba(100,39,10,1);
-  --secondary-clr:rgba(254,7,62,1);
+  --secondary-clr:rgba(250,7,62,1);
   --accent-clr: rgba(134,158,7,1);
   --overlay-clr: rgba(254,221,175,0.7);
   --white-clr: rgba(255,255,255,1);
@@ -37,6 +37,7 @@
   --bold-fw: 700;
 
   /* sizes */
+  --xs:0.75rem;
   --sm: 1rem;
   --base: 1.3125rem;
   --lg: 1.1875rem;

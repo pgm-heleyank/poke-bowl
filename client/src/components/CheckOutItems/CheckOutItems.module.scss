@@ -30,6 +30,9 @@
     text-align: center;
     margin-left: auto;
   }
+  &__bowl_size{
+    font-size: var(--sm);
+  }
 }
 .check_out_item.ticket{
   background-color: rgba(0,0,0,0.05);

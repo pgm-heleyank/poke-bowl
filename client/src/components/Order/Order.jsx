@@ -9,6 +9,7 @@ const Order = ({ item, amount }) => {
     const del = order.filter((order) => order.id !== item.id);
     setOrder(del);
   };
+  console.log(item);
   return (
     <div className={styles.order}>
       <button
@@ -23,7 +24,10 @@ const Order = ({ item, amount }) => {
       <dl className={styles.order_details}>
         <dt className={styles.order_details__name}>
           <span className={styles.order_details__amount}>{amount}x</span>{" "}
-          {item.name}
+          {item.name}{" "}
+          <span className={styles.order_details__bowl_size}>
+            ({item.bowlSize?.name})
+          </span>
         </dt>
         <dd className={styles.order_details__price}>
           €{(amount * item.price).toFixed(2)}

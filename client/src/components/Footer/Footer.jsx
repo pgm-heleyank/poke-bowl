@@ -11,6 +11,7 @@ const Footer = () => {
   order?.map((ord) => ord.items.map((item) => prices.push(item.price)));
   const totalPrice =
     order &&
+    prices.length > 0 &&
     prices.reduce(
       (previousValue, currentValue) => previousValue + currentValue
     );

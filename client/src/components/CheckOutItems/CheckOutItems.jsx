@@ -15,7 +15,6 @@ const CheckOutItems = ({ ticket }) => {
         const total = tPrices.reduce(
           (previousValue, currentValue) => previousValue + currentValue
         );
-        console.log(or.type);
         return (
           <li key={or.id}>
             <ul
@@ -36,7 +35,12 @@ const CheckOutItems = ({ ticket }) => {
                 </li>
               )}
               <li className={styles.check_out_item__name}>
-                {or.items[0].name}
+                {or.items[0].name}{" "}
+                {or.items[0].bowlSize ? (
+                  <span className={styles.check_out_item__bowl_size}>
+                    ({or.items[0].bowlSize.name})
+                  </span>
+                ) : undefined}
               </li>
               <li className={styles.check_out_item__price}>
                 €{total.toFixed(2)}

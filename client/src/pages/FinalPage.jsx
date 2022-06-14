@@ -2,13 +2,12 @@ import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 const FinalPage = () => {
-  let navigate = useNavigate();
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigate("/", { replace: true });
+      window.location.href = "/";
     }, 8000);
     return () => clearTimeout(timer);
-  }, [navigate]);
+  }, []);
   return (
     <div className="primary-background final-page">
       <iframe

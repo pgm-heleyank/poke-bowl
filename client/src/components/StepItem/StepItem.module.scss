@@ -22,7 +22,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    transform: translateY(-10%) translateX(20%);
+    transform: translateY(-100%) translateX(30%);
+    z-index:10;
   }
   &__item_name {
     font-weight: var(--bold-fw);
