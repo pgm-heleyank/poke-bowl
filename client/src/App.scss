@@ -136,11 +136,11 @@ h1,h2 {
 /*  bowl layout */
 .bowl__container {
   width: 35rem;
-  padding: 10rem 2rem 2rem 2rem;
+  padding: 10rem 2rem 2rem 0;
   margin: 0 auto;
   overflow-x: auto;
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
 .bowl__item {
   width: fit-content;

@@ -7,6 +7,10 @@
   gap: 1rem;
   border-radius:var(--border-radius);
   background-color: var(--overlay-clr);
+  &__height {
+      height: 35rem;
+
+  }
   &__header {
     display: flex;
     justify-content: space-between;

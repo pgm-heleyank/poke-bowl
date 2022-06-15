@@ -67,7 +67,9 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
   return (
     <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
       {amount ? <Counter amount={amount} type={type} /> : undefined}
-      <div className={styles.dish_card}>
+      <div
+        className={`${styles.dish_card} ${!make && styles.dish_card__height}`}
+      >
         <div className={styles.dish_card__header}>
           <p className={styles.dish_card__price}>
             €{(data?.price + bowlSize.price).toFixed(2)}
