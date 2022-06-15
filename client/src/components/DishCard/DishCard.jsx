@@ -4,6 +4,8 @@ import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import Dish from "../Dish/Dish";
 import styles from "./DishCard.module.scss";
+import Mochi2 from "../../assets/img/mochi2.svg";
+import Mochi4 from "../../assets/img/mochi4.svg";
 
 const DishCard = ({
   data,
@@ -15,6 +17,10 @@ const DishCard = ({
   customOrder,
   extraPrice,
   setExtraPrice,
+  boxSize,
+  setBoxSize,
+  dessertOrder,
+  setDessertOrder,
 }) => {
   const [{ bowls, sides, plates }] = useContext(DataContext);
   const [bowlSize, setBowlSize] = useState(plates[0]);
@@ -37,15 +43,23 @@ const DishCard = ({
       itemBuy = sides.find(
         (side) => side.id === e.target.parentNode.dataset.id
       );
-    } else if (make) {
+    } else if (make || dessert) {
       itemBuy = data;
     }
-
-    const changedId = {
-      ...itemBuy,
-      id: itemBuy.id + bowlSize.id,
-      price: itemBuy.price + bowlSize.price,
-    };
+    let changedId = {};
+    if (!dessert) {
+      changedId = {
+        ...itemBuy,
+        id: itemBuy.id + bowlSize.id,
+        price: itemBuy.price + bowlSize.price,
+      };
+    } else {
+      changedId = {
+        ...itemBuy,
+        id: itemBuy.id + bowlSize.id,
+        price: bowlSize.price,
+      };
+    }
 
     const addBowlSize = { ...changedId, bowlSize: bowlSize };
 
@@ -66,16 +80,24 @@ const DishCard = ({
     setOrder(newItems);
     setCustomOrder && setCustomOrder([]);
     extraPrice && setExtraPrice(0);
+    setDessertOrder && setDessertOrder([]);
+    setBowlSize(plates[0]);
+    setBoxSize(null);
   };
 
   const handleSize = (e) => {
     if (e.target.value === "small") {
       setBowlSize(plates[0]);
-    } else {
+    } else if (e.target.value === "large") {
       setBowlSize(plates[1]);
+    } else if (e.target.value === "small-box") {
+      setBowlSize(plates[2]);
+      setBoxSize(plates[2]);
+    } else if (e.target.value === "large-box") {
+      setBowlSize(plates[3]);
+      setBoxSize(plates[3]);
     }
   };
-
   return (
     <>
       {make && (
@@ -101,19 +123,65 @@ const DishCard = ({
         >
           <div className={styles.dish_card__header}>
             <p className={styles.dish_card__price}>
-              €{(data?.price + bowlSize.price).toFixed(2)}
+              €
+              {!dessert
+                ? (data?.price
+                    ? data?.price + bowlSize.price
+                    : 0 + bowlSize.price
+                  ).toFixed(2)
+                : bowlSize.price}
             </p>
-            {!make && <img src={data.svg.url} alt={data.name} />}
+            {!make && !dessert && <img src={data.svg.url} alt={data.name} />}
+            {dessert && boxSize?.name !== "big box" ? (
+              <img src={Mochi2} alt="small box" />
+            ) : (
+              dessert &&
+              boxSize?.name === "big box"(<img src={Mochi4} alt="big box" />)
+            )}
           </div>
           {make ? (
             <h3 className={styles.dish_card__title}>Your custom bowl</h3>
           ) : (
             <>
               <h3 className={styles.dish_card__title}>
-                {dessert ? `${data.inPriceItems}x` : ""} {data?.name}
+                {dessert ? `Tropical Ice Cream Treats` : data?.name}
               </h3>
               {dessert ? (
-                <p>Tropical Ice Cream Treats</p>
+                <>
+                  <p>
+                    {dessertOrder?.map((dessert) => dessert.name).join(", ")}
+                  </p>
+                  <p>Choose box size</p>
+                  <div className={styles.dish_card__btns}>
+                    {dessertOrder?.length < 2 && (
+                      <Button
+                        handleClick={(e) => handleSize(e)}
+                        size="small"
+                        selected={
+                          bowlSize.id === "cl3sjx4boe6id0elctwhka8hg"
+                            ? true
+                            : false
+                        }
+                        value="small-box"
+                      >
+                        2pc box
+                      </Button>
+                    )}
+                    {dessertOrder?.length === 2 && <p>want more?</p>}
+                    <Button
+                      handleClick={(e) => handleSize(e)}
+                      size="small"
+                      selected={
+                        bowlSize.id === "cl3sjyl2re7bf0elciw9xps63"
+                          ? true
+                          : false
+                      }
+                      value="large-box"
+                    >
+                      4pc box
+                    </Button>
+                  </div>
+                </>
               ) : (
                 <p>{data.description}</p>
               )}
