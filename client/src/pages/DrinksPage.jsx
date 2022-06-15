@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, DessertElement, Drinks } from "../components";
+import { DessertElement, Drinks } from "../components";
 
 const DrinksPage = () => {
   return (

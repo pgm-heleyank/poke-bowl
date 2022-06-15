@@ -1,61 +1,123 @@
 import React from "react";
 import styles from "./Dish.module.scss";
-import cucumber from "../../assets/img/cucumber.svg";
-import mango from "../../assets/img/mango.svg";
-import nachos from "../../assets/img/nachos.svg";
-import rice from "../../assets/img/rice.svg";
-import tomatoes from "../../assets/img/tomatoes.svg";
-import chicken from "../../assets/img/chicken.svg";
-import chilliMayo from "../../assets/img/chilli_mayo.svg";
-import spring from "../../assets/img/spring.svg";
-const Dish = ({ bowlSize }) => {
+import uuid from "react-uuid";
+import DeleteSvg from "../../assets/img/delete.svg";
+
+const Dish = ({
+  bowlSize,
+  customOrder,
+  setCustomOrder,
+  extraPrice,
+  setExtraPrice,
+}) => {
+  const ingredients = [];
+  customOrder?.map((category) =>
+    category.items.map((ingredient) => ingredients.push(ingredient))
+  );
+  const handleDelete = (e) => {
+    const filteredOrder = customOrder?.map((category) => {
+      return {
+        ...category,
+        items: category.items.filter(
+          (ingredient) =>
+            ingredient.id !== e.target.parentNode.parentNode.dataset.id
+        ),
+      };
+    });
+    setCustomOrder(filteredOrder);
+    const filteredIngredient = customOrder?.map((category) =>
+      category.items.filter(
+        (ingredient) =>
+          ingredient.id === e.target.parentNode.parentNode.dataset.id
+      )
+    );
+    const handleMinus = () => {
+      const filteredIngredientArr = filteredIngredient.filter(
+        (array) => array.length > 0
+      );
+      const prices = [];
+      filteredIngredientArr[0].map((i) => prices.push(i.price));
+      const minus = -prices.reduce(
+        (previousValue, currentValue) => previousValue + currentValue
+      );
+      if (extraPrice < -minus) {
+        setExtraPrice(0);
+      } else {
+        const newPrice = extraPrice + minus;
+        setExtraPrice(newPrice);
+      }
+    };
+
+    /* filter labels in custom order */
+    const customBase = customOrder.filter((order) => order.label === "base");
+    const customProtein = customOrder.filter(
+      (order) => order.label === "protein"
+    );
+    const customMixin = customOrder.filter((order) => order.label === "mixin");
+    const customDressing = customOrder.filter(
+      (order) => order.label === "dressing"
+    );
+    const customTopping = customOrder.filter(
+      (order) => order.label === "topping"
+    );
+
+    const filteredIngredientArr = filteredIngredient.filter(
+      (array) => array.length > 0
+    );
+    if (filteredIngredientArr[0][0]?.label === "base") {
+      const chosenBaseItems = customBase[0]?.items.length;
+      if (chosenBaseItems >= 2) {
+        handleMinus();
+      }
+    }
+    if (filteredIngredientArr[0][0]?.label === "protein") {
+      const chosenProteinItems = customProtein[0]?.items.length;
+      if (chosenProteinItems >= 2) {
+        handleMinus();
+      }
+    }
+    if (filteredIngredientArr[0][0]?.label === "mixin") {
+      const chosenMixinItems = customMixin[0]?.items.length;
+      if (chosenMixinItems >= 6) {
+        handleMinus();
+      }
+    }
+    if (filteredIngredientArr[0][0]?.label === "dressing") {
+      const chosenDressingItems = customDressing[0]?.items.length;
+      if (chosenDressingItems >= 2) {
+        handleMinus();
+      }
+    }
+    if (filteredIngredientArr[0][0]?.label === "topping") {
+      const chosenToppingItems = customTopping[0]?.items.length;
+      if (chosenToppingItems >= 4) {
+        handleMinus();
+      }
+    }
+  };
+
   return (
     <div className={styles.dish_container}>
       <ul className={styles.dish}>
-        <div className={`${styles.dish__base}`}>
-          <li className={styles.dish__base__item}>
-            <img className={styles.dish__base__img} src={rice} alt="" />
-          </li>
-          <li className={styles.dish__base__item}>
-            <img src={nachos} alt="" className={styles.dish__base__img} />
-          </li>
-        </div>
-        <div className={styles.dish__protein}>
-          <li className={styles.dish__base__item}>
-            <img
-              src={chicken}
-              alt=""
-              className={`${styles.dish__base__img} ${styles.chicken}`}
-            />
-          </li>
-        </div>
-        <div className={styles.dish__mix_in}>
-          <li className={styles.dish__mix_in__item}>
-            <img className={styles.dish__base__img} src={mango} alt="" />
-          </li>
-          <li className={styles.dish__mix_in__item}>
-            <img src={tomatoes} alt="" className={styles.dish__base__img} />
-          </li>
-          <li className={styles.dish__mix_in__item}>
-            <img src={cucumber} alt="" className={styles.dish__base__img} />
-          </li>
-          <li className={styles.dish__mix_in__item}>
-            <img src={tomatoes} alt="" className={styles.dish__base__img} />
-          </li>
-          <li className={styles.dish__mix_in__item}>
-            <img src={cucumber} alt="" className={styles.dish__base__img} />
-          </li>
-        </div>
-        <div className={styles.dish__dressing}>
-          <li className={styles.dish__base__item}>
-            <img src={chilliMayo} alt="" className={styles.dish__base__img} />
-          </li>
-        </div>
-        <div className={styles.dish__topping}>
-          <li className={styles.dish__base__item}>
-            <img src={spring} alt="" className={styles.dish__base__img} />
-          </li>
-        </div>
+        {ingredients?.map((ingredient) => {
+          return (
+            <li
+              key={uuid()}
+              data-id={ingredient.id}
+              className={styles.dish__container}
+            >
+              <button onClick={(e) => handleDelete(e)}>
+                <img src={DeleteSvg} alt="delete ingredient" />
+              </button>
+              <span>{ingredient.name}</span>
+              <img
+                src={ingredient.svg.url}
+                alt="delete"
+                className={styles.dish__img}
+              />
+            </li>
+          );
+        })}
       </ul>
 
       <img src={bowlSize.svg.url} alt="" className={styles.dish__bowl} />

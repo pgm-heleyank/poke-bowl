@@ -117,6 +117,9 @@ h1,h2 {
   justify-content: center;
   gap: 2rem;
 }
+.main-layout__left-column--flex-end {
+    justify-content: flex-end;
+}
 .main-layout__right-column{
   border: 2px solid green;
   width: 20%;

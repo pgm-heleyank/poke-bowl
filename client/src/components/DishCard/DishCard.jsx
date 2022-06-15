@@ -1,12 +1,21 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext, OrderContext } from "../../App";
-import editSvg from "../../assets/img/edit.svg";
 import Button from "../Button/Button";
 import Counter from "../Counter/Counter";
 import Dish from "../Dish/Dish";
 import styles from "./DishCard.module.scss";
 
-const DishCard = ({ data, plate, dessert, make, type }) => {
+const DishCard = ({
+  data,
+  plate,
+  dessert,
+  make,
+  type,
+  setCustomOrder,
+  customOrder,
+  extraPrice,
+  setExtraPrice,
+}) => {
   const [{ bowls, sides, plates }] = useContext(DataContext);
   const [bowlSize, setBowlSize] = useState(plates[0]);
   const [order, setOrder] = useContext(OrderContext);
@@ -17,6 +26,7 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
   useEffect(() => {
     setAmount(newAmount);
   }, [newAmount]);
+
   const handleClick = (e) => {
     let itemBuy = "";
     if (type === "bowl") {
@@ -54,6 +64,8 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
         ]
       : [...up, { id: addBowlSize.id, items: [...dub], type: `${type}` }];
     setOrder(newItems);
+    setCustomOrder && setCustomOrder([]);
+    extraPrice && setExtraPrice(0);
   };
 
   const handleSize = (e) => {
@@ -65,67 +77,80 @@ const DishCard = ({ data, plate, dessert, make, type }) => {
   };
 
   return (
-    <li key={data?.id} className="bowl__item" data-id={data?.id} value={amount}>
-      {amount ? <Counter amount={amount} type={type} /> : undefined}
-      <div
-        className={`${styles.dish_card} ${!make && styles.dish_card__height}`}
+    <>
+      {make && (
+        <Dish
+          bowlSize={bowlSize}
+          customOrder={customOrder}
+          setCustomOrder={setCustomOrder}
+          extraPrice={extraPrice}
+          setExtraPrice={setExtraPrice}
+        />
+      )}
+      <li
+        key={data?.id}
+        className="bowl__item"
+        data-id={data?.id}
+        value={amount}
       >
-        <div className={styles.dish_card__header}>
-          <p className={styles.dish_card__price}>
-            €{(data?.price + bowlSize.price).toFixed(2)}
-          </p>
-          {!make ? (
-            <img src={data.svg.url} alt={data.name} />
+        {amount ? <Counter amount={amount} type={type} /> : undefined}
+        <div
+          className={`${styles.dish_card} ${!make && styles.dish_card__height}`}
+        >
+          <div className={styles.dish_card__header}>
+            <p className={styles.dish_card__price}>
+              €{(data?.price + bowlSize.price).toFixed(2)}
+            </p>
+            {!make && <img src={data.svg.url} alt={data.name} />}
+          </div>
+          {make ? (
+            <h3 className={styles.dish_card__title}>Your custom bowl</h3>
           ) : (
-            <Dish bowlSize={bowlSize} />
+            <>
+              <h3 className={styles.dish_card__title}>
+                {dessert ? `${data.inPriceItems}x` : ""} {data?.name}
+              </h3>
+              <p>
+                Juicy grilled Farm chicken with healthy avocado, corn,
+                jalapeños, feta cheese & sweet potato. Dressed with homemade
+                chili mayo and topped off with chili flakes, spring onions &
+                nachos
+              </p>
+            </>
+          )}
+
+          {dessert ? (
+            ""
+          ) : (
+            <div className={styles.dish_card__btns}>
+              <Button
+                handleClick={(e) => handleSize(e)}
+                size="small"
+                selected={
+                  bowlSize.id === "cl3sjrvzhe4xq0elcnnjhracv" ? true : false
+                }
+                value="small"
+              >
+                small bowl
+              </Button>
+              <Button
+                handleClick={(e) => handleSize(e)}
+                size="small"
+                selected={
+                  bowlSize.id !== "cl3sjrvzhe4xq0elcnnjhracv" ? true : false
+                }
+                value="large"
+              >
+                large bowl
+              </Button>
+            </div>
           )}
         </div>
-        {make ? (
-          <h3 className={styles.dish_card__title}>Your custom bowl</h3>
-        ) : (
-          <>
-            <h3 className={styles.dish_card__title}>
-              {dessert ? `${data.inPriceItems}x` : ""} {data?.name}
-            </h3>
-            <p>
-              Juicy grilled Farm chicken with healthy avocado, corn, jalapeños,
-              feta cheese & sweet potato. Dressed with homemade chili mayo and
-              topped off with chili flakes, spring onions & nachos
-            </p>
-          </>
-        )}
-
-        {dessert ? (
-          ""
-        ) : (
-          <div className={styles.dish_card__btns}>
-            <Button
-              handleClick={(e) => handleSize(e)}
-              size="small"
-              selected={
-                bowlSize.id === "cl3sjrvzhe4xq0elcnnjhracv" ? true : false
-              }
-              value="small"
-            >
-              small bowl
-            </Button>
-            <Button
-              handleClick={(e) => handleSize(e)}
-              size="small"
-              selected={
-                bowlSize.id !== "cl3sjrvzhe4xq0elcnnjhracv" ? true : false
-              }
-              value="large"
-            >
-              large bowl
-            </Button>
-          </div>
-        )}
-      </div>
-      <Button handleClick={handleClick} size="small" secondary>
-        add to order
-      </Button>
-    </li>
+        <Button handleClick={handleClick} size="small" secondary>
+          add to order
+        </Button>
+      </li>
+    </>
   );
 };
 

@@ -21,9 +21,16 @@ const MakeYourOwnPage = () => {
   }, [extraPrice, customOrder]);
   return (
     <>
-      <div className="main-layout__left-column">
+      <div className="main-layout__left-column main-layout__left-column--flex-end ">
         <ul className="bowl__container">
-          <DishCard make data={customData} />
+          <DishCard
+            make
+            data={customData}
+            setCustomOrder={setCustomOrder}
+            customOrder={customOrder}
+            extraPrice={extraPrice}
+            setExtraPrice={setExtraPrice}
+          />
         </ul>
       </div>
       <div className="main-layout__right-column">
