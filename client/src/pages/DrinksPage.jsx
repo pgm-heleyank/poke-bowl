@@ -1,12 +1,12 @@
 import React from "react";
-import { DessertElement, Drinks } from "../components";
+import { DessertElement, Drinks, PageTransitions } from "../components";
 
 const DrinksPage = () => {
   return (
     <>
-      <div className="main-layout__left-column">
+      <PageTransitions>
         <Drinks />
-      </div>
+      </PageTransitions>
       <div className="main-layout__right-column">
         <h3 className="main-layout__right-title">Dessert?</h3>
         <DessertElement />

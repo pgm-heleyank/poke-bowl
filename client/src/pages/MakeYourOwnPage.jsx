@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { DishCard, Steps } from "../components";
+import { DishCard, PageTransitions, Steps } from "../components";
 import uuid from "react-uuid";
 
 const MakeYourOwnPage = () => {
@@ -21,18 +21,20 @@ const MakeYourOwnPage = () => {
   }, [extraPrice, customOrder]);
   return (
     <>
-      <div className="main-layout__left-column main-layout__left-column--flex-end ">
-        <ul className="bowl__container">
-          <DishCard
-            make
-            data={customData}
-            setCustomOrder={setCustomOrder}
-            customOrder={customOrder}
-            extraPrice={extraPrice}
-            setExtraPrice={setExtraPrice}
-          />
-        </ul>
-      </div>
+      <PageTransitions>
+        <div className="main-layout__left-column main-layout__left-column--flex-end ">
+          <ul className="bowl__container">
+            <DishCard
+              make
+              data={customData}
+              setCustomOrder={setCustomOrder}
+              customOrder={customOrder}
+              extraPrice={extraPrice}
+              setExtraPrice={setExtraPrice}
+            />
+          </ul>
+        </div>
+      </PageTransitions>
       <div className="main-layout__right-column">
         <Steps
           customOrder={customOrder}

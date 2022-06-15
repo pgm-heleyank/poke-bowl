@@ -82,7 +82,7 @@ const DishCard = ({
     extraPrice && setExtraPrice(0);
     setDessertOrder && setDessertOrder([]);
     setBowlSize(plates[0]);
-    setBoxSize(null);
+    setBoxSize && setBoxSize(null);
   };
 
   const handleSize = (e) => {
@@ -136,7 +136,7 @@ const DishCard = ({
               <img src={Mochi2} alt="small box" />
             ) : (
               dessert &&
-              boxSize?.name === "big box"(<img src={Mochi4} alt="big box" />)
+              boxSize?.name === "big box" && <img src={Mochi4} alt="big box" />
             )}
           </div>
           {make ? (

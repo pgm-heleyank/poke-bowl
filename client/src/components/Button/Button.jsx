@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./Button.module.scss";
+import { motion } from "framer-motion";
 
 const button = ({
   children,
@@ -28,16 +29,19 @@ const button = ({
     return style;
   };
   return link ? (
-    <Link
-      to={link}
-      className={`${styles.button} ${size ? handleSize(size) : undefined} ${
-        selected ? styles.selected : ""
-      }  ${secondary && styles.button__secondary}`}
-    >
-      {children}
-    </Link>
+    <motion.div whileTap={{ scale: 0.9 }}>
+      <Link
+        to={link}
+        className={`${styles.button} ${size ? handleSize(size) : undefined} ${
+          selected ? styles.selected : ""
+        }  ${secondary && styles.button__secondary}`}
+      >
+        {children}
+      </Link>
+    </motion.div>
   ) : (
-    <button
+    <motion.button
+      whileTap={{ scale: 0.9 }}
       value={value}
       onClick={(e) => handleClick && handleClick(e)}
       className={`${styles.button} ${size ? handleSize(size) : undefined} ${
@@ -45,7 +49,7 @@ const button = ({
       } ${secondary && styles.button__secondary}`}
     >
       {children}
-    </button>
+    </motion.button>
   );
 };
 

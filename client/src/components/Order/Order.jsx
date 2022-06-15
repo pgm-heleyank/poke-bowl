@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import styles from "./Order.module.scss";
 import deleteSvg from "../../assets/img/delete.svg";
 import { OrderContext } from "../../App";
+import { motion } from "framer-motion";
 
 const Order = ({ item, amount }) => {
   const [order, setOrder] = useContext(OrderContext);
@@ -11,12 +12,13 @@ const Order = ({ item, amount }) => {
   };
   return (
     <div className={styles.order}>
-      <button
+      <motion.button
+        whileTap={{ scale: 0.9 }}
         className={styles.order__delete_btn}
         onClick={() => handleDelete()}
       >
         <img src={deleteSvg} alt="delete menu item" />
-      </button>
+      </motion.button>
       <div className={styles.order__dish_container}>
         <img src={item.svg.url} alt={item.name} />
       </div>

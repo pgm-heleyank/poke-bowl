@@ -15,6 +15,7 @@ import Steps from "./Steps/Steps.jsx";
 import StepItem from "./StepItem/StepItem.jsx";
 import Drink from "./Drink/Drink.jsx";
 import Flavor from "./Flavor/Flavor.jsx";
+import PageTransitions from "./PageTransitions/PageTransitions.jsx";
 export {
   Button,
   Header,
@@ -33,4 +34,5 @@ export {
   StepItem,
   Drink,
   Flavor,
+  PageTransitions,
 };

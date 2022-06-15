@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import { DataContext } from "../App";
-import { DishCard, Drinks } from "../components";
+import { DishCard, Drinks, PageTransitions } from "../components";
 
 const SidesPage = () => {
   const [{ sides }] = useContext(DataContext);
   return (
     <>
-      <div className="main-layout__left-column">
+      <PageTransitions>
         <ul className="bowl__container">
           {sides.map((side) => (
             <DishCard key={side.id} data={side} type="side" />
           ))}
         </ul>
-      </div>
+      </PageTransitions>
       <div className="main-layout__right-column">
         <h3 className="main-layout__right-title">Thirsty?</h3>
         <Drinks highlighted />

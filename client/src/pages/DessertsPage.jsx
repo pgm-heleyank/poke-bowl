@@ -1,7 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../App";
-import { DishCard, FlavorElement } from "../components";
+import { DishCard, FlavorElement, PageTransitions } from "../components";
 import uuid from "react-uuid";
+import { motion, AnimatePresence } from "framer-motion";
 import Mochi2 from "../assets/img/mochi2.svg";
 import Mochi4 from "../assets/img/mochi4.svg";
 
@@ -24,7 +25,7 @@ const DessertsPage = () => {
   }, [boxSize, dessertOrder]);
   return (
     <>
-      <div className="main-layout__left-column">
+      <PageTransitions>
         <ul className="bowl__container">
           <DishCard
             key={plates[2].id}
@@ -37,11 +38,16 @@ const DessertsPage = () => {
             setDessertOrder={setDessertOrder}
           />
         </ul>
-      </div>
-      <div className="main-layout__right-column">
-        {console.log("this", boxSize, dessertOrder.length)}
+      </PageTransitions>
+      <AnimatePresence>
         {boxSize && boxSize?.inPriceItems !== dessertOrder.length && (
-          <>
+          <motion.div
+            className="main-layout__right-column"
+            initial={{ opacity: 0, x: "100vw" }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: "100vw" }}
+            transition={{ type: "spring", bounce: 0.3 }}
+          >
             <h3 className="main-layout__right-title">Flavors</h3>
             <FlavorElement
               dessertOrder={dessertOrder}
@@ -49,9 +55,9 @@ const DessertsPage = () => {
               boxSize={boxSize}
               setBoxSize={setBoxSize}
             />
-          </>
+          </motion.div>
         )}
-      </div>
+      </AnimatePresence>
     </>
   );
 };
