@@ -95,7 +95,9 @@ const DishCard = ({
       >
         {amount ? <Counter amount={amount} type={type} /> : undefined}
         <div
-          className={`${styles.dish_card} ${!make && styles.dish_card__height}`}
+          className={`${styles.dish_card} ${
+            !make && !dessert && styles.dish_card__height
+          }`}
         >
           <div className={styles.dish_card__header}>
             <p className={styles.dish_card__price}>
@@ -110,12 +112,11 @@ const DishCard = ({
               <h3 className={styles.dish_card__title}>
                 {dessert ? `${data.inPriceItems}x` : ""} {data?.name}
               </h3>
-              <p>
-                Juicy grilled Farm chicken with healthy avocado, corn,
-                jalapeños, feta cheese & sweet potato. Dressed with homemade
-                chili mayo and topped off with chili flakes, spring onions &
-                nachos
-              </p>
+              {dessert ? (
+                <p>Tropical Ice Cream Treats</p>
+              ) : (
+                <p>{data.description}</p>
+              )}
             </>
           )}
 

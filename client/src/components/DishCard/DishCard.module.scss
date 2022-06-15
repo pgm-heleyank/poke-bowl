@@ -4,11 +4,12 @@
   padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1rem;
   border-radius:var(--border-radius);
   background-color: var(--overlay-clr);
   &__height {
-      height: 35rem;
+      height: 38rem;
   }
   &__header {
     display: flex;

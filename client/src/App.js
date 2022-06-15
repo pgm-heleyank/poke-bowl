@@ -38,6 +38,7 @@ const App = () => {
         query Data {
           bowls {
             id
+            description
             inPriceItems
             name
             price
@@ -115,6 +116,7 @@ const App = () => {
           }
           sides {
             id
+            description
             inPriceItems
             name
             price
