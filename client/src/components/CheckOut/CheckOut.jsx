@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { OrderContext } from "../../App";
 const CheckOut = ({ ticket }) => {
   const [order] = useContext(OrderContext);
+  /* make array with prices to calculate total price*/
   const prices = [];
   order?.map((ord) => ord.items.map((item) => prices.push(item.price)));
   const totalPrice =

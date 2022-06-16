@@ -1,0 +1,29 @@
+.dish{
+    &__container {
+        display: flex;
+        align-items: center;
+        width: 42%;
+        position: relative;
+        opacity: 0;
+    }
+
+    &__img {
+        width: 6rem;
+        min-height:6rem;
+        object-fit: contain;
+        position: absolute;
+    }
+    &__container:nth-child(even) {
+        flex-direction: row-reverse;
+        img {
+            left:-0.5rem;
+            z-index: -1;
+        }
+    }
+    &__container:nth-child(odd) {
+        img {
+            right:-0.5rem;
+            z-index: -1;
+        }
+    }
+}

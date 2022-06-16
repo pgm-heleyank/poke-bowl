@@ -45,6 +45,11 @@
   --border-radius: 2rem;
 
 }
+html {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden
+}
 
 body, 
 dt, 
@@ -101,6 +106,7 @@ h1,h2 {
   height:100vh;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .home {
@@ -201,4 +207,227 @@ h1,h2 {
 .primary-background__animation { 
   width: 50rem;
   aspect-ratio:1/1;
+}
+
+/* custom ingredient placement for make your own */
+.dish {
+    .show {
+        opacity: 1;
+        transition: all 3s ease-in-out;
+        transition-delay: 2s;
+    }
+}
+
+
+.cucumber {
+    top: -2rem;
+    left: 4rem;
+    transform: rotate(0deg);
+}
+
+.corn {
+    top: -2rem;
+    left: 4rem;
+}
+
+.cherry_tomatoes {
+    top: -2rem;
+    left: -1rem;
+}
+
+.sweet_potato {
+    top: -2rem;
+    left: -1rem;
+}
+
+.guacamole {
+    top: -2.5rem;
+    left: 3rem;
+}
+
+.mango {
+    top: -2.5rem;
+    left: 3rem;
+}
+.carrot {
+    top: -3.25rem;
+    left: 6rem;
+}
+.red_onion {
+    top: -3rem;
+    left: 6rem;
+}
+
+.edamame {
+    top: -4rem;
+    left: -1rem;
+}
+.seaweed_salad {
+    top: -3.5rem;
+    left: 2.5rem;
+}
+
+.feta_cheese {
+    top: -4.25rem;
+    left: 5rem;
+}
+.hummus { 
+    top: -4.5rem;
+    left: -2rem;
+}
+.beetroot {
+    top: -4rem;
+}
+.jalapenos {
+    top: -4rem;
+    left: -2rem;
+}
+.baby_spinach {
+    top: -4rem;
+    left: 4rem;
+}
+.masago {
+    top: -4.75rem;
+    left: 4rem;
+}
+.spring_onions {
+    top: -4.5rem;
+    left: -4rem;
+}
+.fried_onions {
+    top: -5rem;
+    left: -4.5rem;
+}
+.sesame_mix {
+    top: -5rem;
+    left: -4.5rem;
+}
+.sesame_wasabi {
+    top: -5.25rem;
+    left: -4.5rem;
+}
+.sesame_soy {
+    top: -5.25rem;
+    left: -4.5rem;
+}
+.crushed_wasabi {
+    top: -6rem;
+    left: 2rem;
+}
+.sesame_bbq {
+    top: -5.75rem;
+    left: 2rem;
+}
+.shrimp_chips {
+    top: -5.75rem;
+    left: -2rem;
+}
+.walnuts {
+    top: -6rem;
+    left: -3.5rem;
+}
+.chili_flakes {
+    top: -6.25rem;
+    left: 3.5rem;
+}
+.pickled_ginger {
+    top: -6.5rem;
+    left: 2rem;
+}
+.nachos {
+    top: -7rem;
+    left: -2rem;
+}
+.farm_chicken {
+    top: -6.5rem;
+    left: -2rem;
+}
+.highland_steak {
+    top: -7.25rem;
+    left: 2.5rem;
+}
+.nordic_salmon {
+    top: -7.25rem;
+    left: 2.5rem;
+}
+.marinated_nordic_salmon {
+    top: -8rem;
+    left: 2.5rem;
+}
+.ahi_tuna {
+    top: -8rem;
+    left: -3rem;
+}
+.spicy_ahi_tuna {
+    top: -9rem;
+    left: -3rem;
+}
+.japanese_tofu {
+    top: -9.25rem;
+    left: -2rem;
+}
+.wasabi_mayo {
+    top: -9.75rem;
+    left: 4rem;
+}
+.chili_mayo {
+    top: -9.75rem;
+    left: 4rem;
+}
+.sweet_chili {
+    top: -10.5rem;
+    left: 4rem;
+}
+.teriyaki {
+    top: -10.5rem;
+    left: 6rem;
+}
+.sesame_dressing {
+    top: -11.5rem;
+    left: 7rem;
+}
+.sriracha_hot {
+    top: -11.5rem;
+    left: 7rem;
+}
+.avocado_garlic {
+    top: -12rem;
+    left: 1rem;
+}
+.cheesy_lemon_mayo {
+    top: -12rem;
+    left: 1rem;
+}
+.avocado {
+    top: -12.75rem;
+    left: 5rem;
+}
+.peanut_crumble {
+    top: -12.75rem;
+    left: 5rem;
+}
+.brown_rice {
+    top: -13rem;
+    left: -1rem;
+}
+.rice {
+    top: -14rem;
+    left: -1.5rem;
+}
+.sriracha_mayo {
+    top: -14.5rem;
+    left: 5rem;
+}
+.quinoa {
+    top: -13rem;
+    left: 1rem;
+}
+.salad {
+    top: -13rem;
+    left: 6rem;
+}
+.soy_sauce {
+    top: -16.5rem;
+    left: -3rem;
+    z-index: -2;
 }

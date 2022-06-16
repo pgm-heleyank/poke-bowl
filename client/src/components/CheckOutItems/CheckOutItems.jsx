@@ -6,7 +6,6 @@ import styles from "./CheckOutItems.module.scss";
 const CheckOutItems = ({ ticket }) => {
   const [order] = useContext(OrderContext);
 
-  console.log(order);
   return (
     <ul className={styles.check_out_items}>
       {order?.map((or) => {

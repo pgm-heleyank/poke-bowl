@@ -11,6 +11,7 @@ const DessertsPage = () => {
   const [dessertOrder, setDessertOrder] = useState([]);
   const [customData, setCustomData] = useState([]);
   const [boxSize, setBoxSize] = useState(null);
+  /* put data in correct format*/
   useEffect(() => {
     setCustomData({
       id: uuid(),

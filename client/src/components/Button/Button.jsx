@@ -12,6 +12,7 @@ const button = ({
   selected,
   value,
 }) => {
+  /* handle size of button*/
   const handleSize = (size) => {
     let style = null;
     switch (size) {
@@ -28,6 +29,7 @@ const button = ({
     }
     return style;
   };
+  /* change button in link if it is a link*/
   return link ? (
     <motion.div whileTap={{ scale: 0.9 }}>
       <Link

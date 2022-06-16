@@ -14,12 +14,15 @@
   text-align: center;
   gap: 0.5rem;
   &__item {
+    height: 100%;
     padding: 2rem 0;
     width: 100%;
     transition: all 0.3 ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   &__item[aria-current] {
     background-color: var(--overlay-clr);
-    height:100%
   }
 }

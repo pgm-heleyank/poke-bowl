@@ -4,7 +4,7 @@ const FinalPage = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       window.location.href = "/";
-    }, 8000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
   return (

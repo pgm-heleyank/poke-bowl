@@ -27,13 +27,24 @@ const DishCard = ({
   const [order, setOrder] = useContext(OrderContext);
   let [amount, setAmount] = useState(0);
 
+  /* animation controls*/
+  const [animateDishItems, setAnimateDishItems] = useState({
+    y: 0,
+    scale: 1,
+    opacity: 1,
+  });
+  const [animateDishImage, setAnimateDishImage] = useState({ scale: 1 });
+
+  /* extract product amount */
   const specificItem = order?.find((order) => order?.id === data.id);
   const newAmount = specificItem?.items.length;
   useEffect(() => {
     setAmount(newAmount);
   }, [newAmount]);
 
+  /* handle click of dish card*/
   const handleClick = (e) => {
+    /* check type*/
     let itemBuy = "";
     if (type === "bowl") {
       itemBuy = bowls.find(
@@ -46,6 +57,7 @@ const DishCard = ({
     } else if (make || dessert) {
       itemBuy = data;
     }
+    /* change to correct data format*/
     let changedId = {};
     if (!dessert) {
       changedId = {
@@ -77,14 +89,28 @@ const DishCard = ({
           { id: addBowlSize.id, items: [addBowlSize], type: `${type}` },
         ]
       : [...up, { id: addBowlSize.id, items: [...dub], type: `${type}` }];
+    /* set order*/
     setOrder(newItems);
-    setCustomOrder && setCustomOrder([]);
+    /*wait with resetting data after animation is done*/
+    setTimeout(() => {
+      setCustomOrder && setCustomOrder([]);
+      setAnimateDishItems({
+        y: 0,
+        scale: 1,
+        opacity: 1,
+      });
+      setAnimateDishImage({ scale: 1 });
+    }, 1000);
+    /*reset en set data*/
     extraPrice && setExtraPrice(0);
     setDessertOrder && setDessertOrder([]);
     setBowlSize(plates[0]);
     setBoxSize && setBoxSize(null);
+    setAnimateDishItems({ y: "35%", scale: 0.4, opacity: 0 });
+    setAnimateDishImage({ scale: [1, 0.8, 1] });
   };
 
+  /* set dish size and add extra costs*/
   const handleSize = (e) => {
     if (e.target.value === "small") {
       setBowlSize(plates[0]);
@@ -107,6 +133,8 @@ const DishCard = ({
           setCustomOrder={setCustomOrder}
           extraPrice={extraPrice}
           setExtraPrice={setExtraPrice}
+          animateDishItems={animateDishItems}
+          animateDishImage={animateDishImage}
         />
       )}
       <li
@@ -148,11 +176,16 @@ const DishCard = ({
               </h3>
               {dessert ? (
                 <>
-                  <p>
+                  <p className={styles.dish_card__dessert_flavors}>
                     {dessertOrder?.map((dessert) => dessert.name).join(", ")}
                   </p>
-                  <p>Choose box size</p>
+                  {dessertOrder?.length === 2 && (
+                    <p className={styles.dish_card__dessert_more}>want more?</p>
+                  )}
                   <div className={styles.dish_card__btns}>
+                    <p className={styles.dish_card__dessert_size}>
+                      Choose box size
+                    </p>
                     {dessertOrder?.length < 2 && (
                       <Button
                         handleClick={(e) => handleSize(e)}
@@ -167,7 +200,6 @@ const DishCard = ({
                         2pc box
                       </Button>
                     )}
-                    {dessertOrder?.length === 2 && <p>want more?</p>}
                     <Button
                       handleClick={(e) => handleSize(e)}
                       size="small"

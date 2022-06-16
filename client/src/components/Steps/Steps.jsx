@@ -5,6 +5,7 @@ import styles from "./Steps.module.scss";
 
 const Steps = ({ customOrder, setCustomOrder, extraPrice, setExtraPrice }) => {
   const [{ ingredients }] = useContext(DataContext);
+  /* divide items into labels to display in correct container*/
   const base = ingredients.filter((ingredient) => ingredient.label === "base");
   const protein = ingredients.filter(
     (ingredient) => ingredient.label === "protein"

@@ -11,6 +11,7 @@ const StepItem = ({
   setExtraPrice,
 }) => {
   const [{ ingredients }] = useContext(DataContext);
+
   const addItem = (e) => {
     const itemId =
       e.target.parentNode.dataset.id ||

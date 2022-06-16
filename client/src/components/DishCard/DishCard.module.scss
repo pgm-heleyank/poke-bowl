@@ -31,6 +31,7 @@
   &__btns {
     display: flex;
     gap: 1rem;
+    align-items: center;
   }
   
   &__input {
@@ -42,4 +43,16 @@
   &__input:focus-within {
     border: 2px solid var(--accent-clr);
   }
+}
+
+.dish_card__dessert{
+    &_flavors {
+
+    }
+    &_more{
+        font-size: var(--sm);
+        color: var(--secondary-clr);
+        font-weight: var(--bold-fw);
+        transform: translateY(80%);
+    }
 }

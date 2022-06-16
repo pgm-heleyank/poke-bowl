@@ -8,6 +8,7 @@ const Drinks = ({ highlighted }) => {
   const [numb, setNumb] = useState([]);
 
   useEffect(() => {
+    /* make random array to heighlight different drinks*/
     const randomNumbers = new Set();
     while (randomNumbers.size !== 3) {
       randomNumbers.add(Math.floor(Math.random() * drinks.length));

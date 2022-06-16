@@ -30,6 +30,7 @@ const App = () => {
   const [order, setOrder] = useState(null);
   const location = useLocation();
 
+  /* data from graphcms */
   useEffect(() => {
     const fetchData = async () => {
       const data = await request(
@@ -103,6 +104,7 @@ const App = () => {
               url
             }
             label
+            slug
           }
           plates {
             id
@@ -151,9 +153,9 @@ const App = () => {
 
     fetchData();
   }, []);
-
+  /* loading while waiting for data */
   if (!data) return <p>loading....</p>;
-
+  /* routes */
   return (
     <DataContext.Provider value={[data, setData]}>
       <OrderContext.Provider value={[order, setOrder]}>

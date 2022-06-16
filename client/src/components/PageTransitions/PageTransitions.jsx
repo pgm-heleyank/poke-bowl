@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+/* animation for page transition */
 const animationConfiguration = {
   initial: { opacity: 0, scale: 0.9 },
   animate: {

@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const Footer = () => {
   const [order] = useContext(OrderContext);
+  /* create prices array to calculate total price */
   const prices = [];
   order?.map((ord) => ord.items.map((item) => prices.push(item.price)));
   const totalPrice =

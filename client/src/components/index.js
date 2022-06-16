@@ -16,6 +16,8 @@ import StepItem from "./StepItem/StepItem.jsx";
 import Drink from "./Drink/Drink.jsx";
 import Flavor from "./Flavor/Flavor.jsx";
 import PageTransitions from "./PageTransitions/PageTransitions.jsx";
+import DishItem from "./DishItem/DishItem.jsx";
+import NotHungry from "./NotHungry/NotHungry.jsx";
 export {
   Button,
   Header,
@@ -35,4 +37,6 @@ export {
   Drink,
   Flavor,
   PageTransitions,
+  DishItem,
+  NotHungry,
 };

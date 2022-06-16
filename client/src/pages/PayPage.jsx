@@ -3,6 +3,7 @@ import Logo from "../assets/img/logoPoke.png";
 import DownSvg from "../assets/img/down.svg";
 import { useNavigate } from "react-router-dom";
 import { ROUTES } from "../constants/routes";
+import { motion } from "framer-motion";
 
 const PayPage = () => {
   let navigate = useNavigate();
@@ -20,7 +21,9 @@ const PayPage = () => {
       <p className="pay-page__instruction">
         Please follow the instructions on the terminal
       </p>
-      <img
+      <motion.img
+        animate={{ y: [0, 70, 0, 70, 0, 70, 20, 70] }}
+        transition={{ duration: 4 }}
         className="pay-page__arrow"
         src={DownSvg}
         alt="instruction are on the payment machine"

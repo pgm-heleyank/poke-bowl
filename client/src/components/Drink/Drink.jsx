@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataContext, OrderContext } from "../../App";
 import Counter from "../Counter/Counter";
 import styles from "./Drink.module.scss";
+import { motion } from "framer-motion";
 
 const Drink = ({ drink }) => {
   const [{ drinks }] = useContext(DataContext);
@@ -13,6 +14,7 @@ const Drink = ({ drink }) => {
     const dubble = order?.find((i) => i.id === itemBuy.id);
     const up = order?.filter((i) => i.id !== itemBuy.id);
     let dub = null;
+    /* create correct format*/
     if (dubble) {
       dub = [...dubble.items, itemBuy];
     }
@@ -29,8 +31,10 @@ const Drink = ({ drink }) => {
   useEffect(() => {
     setAmount(newAmount);
   }, [newAmount]);
+
   return (
-    <li
+    <motion.li
+      whileTap={{ scale: 0.9 }}
       key={drink.id}
       value={amount}
       className={styles.drink}
@@ -56,7 +60,7 @@ const Drink = ({ drink }) => {
           {drink.name}
         </span>
       </button>
-    </li>
+    </motion.li>
   );
 };
 

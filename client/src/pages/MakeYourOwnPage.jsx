@@ -8,6 +8,7 @@ const MakeYourOwnPage = () => {
   const [extraPrice, setExtraPrice] = useState(0);
 
   useEffect(() => {
+    /* create correct data format */
     setCustomData({
       id: uuid(),
       name: "Your custom bowl",

@@ -1,12 +1,15 @@
 .footer_wrapper{
-    height:18%
+    height:25rem;
+    display: flex;
+    overflow: hidden;
 }
 .footer {
   background-color: var(--overlay-clr);
-  height: 99%;
+  height: 17.75rem;
+  width: 100vw;
   margin-top: auto;
   padding: 2rem;
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: space-between;

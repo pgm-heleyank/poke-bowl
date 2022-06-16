@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Flavor.module.scss";
+import { motion } from "framer-motion";
 
 const Flavor = ({
   dessert,
@@ -11,9 +12,14 @@ const Flavor = ({
   const handleClick = (e) => {
     setDessertOrder([...dessertOrder, dessert]);
   };
-  console.log(dessertOrder);
+
   return (
-    <li key={dessert.id} data-id={dessert.id} className={styles.flavor_element}>
+    <motion.li
+      whileTap={{ scale: 0.9 }}
+      key={dessert.id}
+      data-id={dessert.id}
+      className={styles.flavor_element}
+    >
       <button onClick={(e) => handleClick(e)}>
         <img
           src={dessert.svg.url}
@@ -22,7 +28,7 @@ const Flavor = ({
         />
         <span className={styles.flavor_element__flavor}>{dessert.name}</span>
       </button>
-    </li>
+    </motion.li>
   );
 };
 
